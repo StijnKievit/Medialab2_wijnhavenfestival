@@ -56,7 +56,9 @@
 .zeebonk_title_section{
     height: 400px;
     position: relative;
+    /*
     margin-bottom: 40px;
+    */
 }
 
 .zeebonk_bluebar{
@@ -96,7 +98,6 @@
     font-size: 2.8em;
     text-align: right;
     padding-left: 40%;
-    line-height: 1.3em;
     height: 400px;
 }
 
@@ -107,6 +108,12 @@
     width: 100%;
     height: 160px;
     background-color: #135181;
+}
+
+.zeebonk_share_bar_buffer{
+    display: block;
+    height: 160px;
+    width: 100%;
 }
 
 .zeebonk_share_bar:after{
@@ -193,7 +200,7 @@
 
 .share_popup .twitter-button{
     display: block;
-    background-color: lightskyblue;
+    background-color: #97daeb;
     color: white;
     font-weight: bold;
     text-align: center;
@@ -210,7 +217,7 @@
 }
 .share_popup .facebook-button{
     display: block;
-    background-color: darkslateblue;
+    background-color: #135181;
     color: #FFFFFF;
     font-weight: bold;
     text-align: center;
@@ -223,4 +230,10 @@
     text-decoration: none;
 
     margin-bottom: 40px;
+}
+
+
+.answer.active{
+    background-color: #FFFFFF;
+    color: #135181;
 }

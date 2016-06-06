@@ -8,34 +8,69 @@
     <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
     <link rel="stylesheet" type="text/css" href="css/baseStyle.css">
     <link rel="stylesheet" type="text/css" href="css/custom_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
 </head>
 <body class="d-background">
-<div class="app_container d-background">
-    <div class="app_segment no-pad zeebonk_title_section">
+<div class="app_container b-background">
+    <div class=" d-background app_segment no-pad zeebonk_title_section">
         <div class="zeebonk_bluebar"></div>
         <div class="zeebonk_text_segment">
             <h2 class="white bot-marg">Je bent een echte...</h2>
             <h1 class="white size-large no-marg">Handelaar</h1>
         </div>
     </div>
-    <div class="app_segment no-pad zeebonk_background_img">
-        <p class="white">
+    <div class="d-background app_segment no-pad zeebonk_background_img">
+        <!--<p class="white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nulla non purus tempor, varius odio eget, porta lacus.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-        </p>
+        </p>-->
     </div>
     <div class="arrow_down_container d-background">
         <img class="arrow-down" src="css/img/pijlomlaag-01.png" alt="v">
     </div>
     <div class="app_segment b-background">
-
+        <p class=" basic">
+            Varen over de onbekende zeeën en oceanen zit in het bloed van de piraat.
+            Samen met zijn mede piraten genieten ze van al het mooie dat de zee te bieden heeft.
+            Er is niks mooier dan schepen kapen en het uitgeven van de geplunderde schatten.
+        </p>
+        <p class=" basic">
+            Niks maakt een piraat blijer dan een lekker sappig stuk <span class="accent_basic">vlees</span> met <span class="accent_basic">bier</span> en <span class="accent_basic">rum</span>!
+        </p>
+        <p class=" basic">
+            Hiervoor kun je terecht bij de onderstaande horeca:
+        </p>
     </div>
-    <div class="app_segment r-background">
+    <div class="app_segment no-marg no-pad b-background">
+        <div class="horeca_block">
+            <img class="horeca_img" src="css/img/Hangar.png" alt="">
+            <a class="horeca_button">
+                Hangar 85
+            </a>
+            <img class="horeca_arrow" src="css/img/Pijltje-04.png">
+        </div>
+        <div class="horeca_block">
+            <img class="horeca_img" src="css/img/Hangar.png" alt="">
+            <a class="horeca_button">
+                Hangar 85
+            </a>
+            <img class="horeca_arrow" src="css/img/Pijltje-04.png">
+        </div>
+        <div class="horeca_block">
+            <img class="horeca_img" src="css/img/Hangar.png" alt="">
+            <a class="horeca_button">
+                Hangar 85
+            </a>
+            <img class="horeca_arrow" src="css/img/Pijltje-04.png">
 
+        </div>
     </div>
-    <div class="zeebonk_share_bar">
+    <div class="zeebonk_share_bar_buffer"></div>
+
+   <!-- <div class="zeebonk_share_bar">
         <div class="share">
             <img class="share-icon" src="css/img/share-icon-01.png" alt="share">
         </div>
@@ -43,7 +78,7 @@
            <p class="white no-marg">Deel met je vrienden!</p>
        </div>
 
-    </div>
+    </div>-->
     <!--<div class="color_devider_red">
 
     </div>
@@ -57,10 +92,33 @@
     </ul>-->
 
 </div>
+<div class="zeebonk_share_bar">
+    <div class="share">
+        <img class="share-icon" src="css/img/share-icon-01.png" alt="share">
+    </div>
+    <div class="share_text">
+        <p class="white no-marg">Deel met je vrienden!</p>
+    </div>
+
+</div>
 <div class="share_popup">
     <p class="text">Deel je type zeebonk!</p>
     <a href="#" class="twitter-button">Twitter</a>
     <a href="#" class="facebook-button">Facebook</a>
 </div>
+
+<script>
+    var share_bar = $('.zeebonk_share_bar');
+    var pop_up = $('.share_popup');
+    var app_container = $('.app_container');
+    share_bar.click(function(e){
+        pop_up.show();
+    });
+
+    app_container.click(function(e){
+       pop_up.hide();
+    });
+
+</script>
 </body>
 </html>

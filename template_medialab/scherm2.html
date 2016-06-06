@@ -8,6 +8,7 @@
     <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
     <link rel="stylesheet" type="text/css" href="css/baseStyle.css">
     <link rel="stylesheet" type="text/css" href="css/custom_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 <body>
     <div class="app_container">
@@ -19,13 +20,125 @@
         </div>
 
             <ul class="answer_list">
-                <li class="answer">Het avontuur</li>
-                <li class="answer">De zonsondergang</li>
-                <li class="answer">A pirate life for me!</li>
-                <li class="answer">Naar mijn dobber staren</li>
+                <li class="answer answer_1" data-value = "1" >Het avontuur</li>
+                <li class="answer answer_2" data-value = "2">De zonsondergang</li>
+                <li class="answer answer_3" data-value = "3">A pirate life for me!</li>
+                <li class="answer answer_4" data-value = "4">Naar mijn dobber staren</li>
                 <span class="next"><img class="arrow" src="css/img/Pijltje-04.png"></span>
             </ul>
 
     </div>
+
+<script>
+
+
+    var question_list = $('.answer_list');
+    var question = $('.question');
+
+    var answer1 = $('.answer_1');
+    var answer2 = $('.answer_2');
+    var answer3 = $('.answer_3');
+    var answer4 = $('.answer_4');
+
+    var next_button = question_list.find('.next');
+
+    var cur_value       = 0;
+    var cur_question    = 0;
+    var max_question    = 0;
+
+    /*get questions*/
+    var questions_string = '[{"vraag":"De eerste vraag","piraat":"Arrrr1","visser":"fishyy1","handelaar":"Echt pittig1","kapitein":"Daar heb ik mensen voor1"},{"vraag":"De tweede vraag","piraat":"Arrrr2","visser":"fishyy2","handelaar":"Echt pittig2","kapitein":"Daar heb ik mensen voor2"},{"vraag":"De derde vraag","piraat":"Arrrr3","visser":"fishyy3","handelaar":"Echt pittig3","kapitein":"Daar heb ik mensen voor3"}]'
+
+    var questions = JSON.parse(questions_string);
+    console.log(questions);
+
+
+    max_question = question.length + 1;
+
+    var next_questions = questions[cur_question];
+
+    question.text(next_questions['vraag']);
+    answer1.text(next_questions['piraat']);
+    answer2.text(next_questions['visser']);
+    answer3.text(next_questions['handelaar']);
+    answer4.text(next_questions['kapitein']);
+    /*loop trough questions*/
+
+
+
+
+    question_list.find('.answer').click(function(){
+
+        question_list.find('.answer').removeClass('active');
+        $(this).addClass('active');
+        console.log('item is clicked');
+    });
+
+    /*next question*/
+    next_button.click(function(e){
+
+        var cur_active_question = question_list.find('.answer.active');
+        console.log(cur_active_question.length == 0);
+        if(cur_active_question.length == 0)
+        {
+            alert("niks ingevuld");
+        }
+        else
+        {
+            console.log('next question');
+            if(cur_question == max_question)
+            {
+
+                /*get last value*/
+                var value = cur_active_question.attr('data-value');
+                cur_value = cur_value + parseInt(value);
+
+
+                /*calc zeebonk*/
+
+
+
+                /*go to next zeebonk screen*/
+                console.log('go to next screen!!!');
+                console.log('zeebonk waarde = ' + cur_value);
+                location.href = 'scherm3.html';
+
+            }
+            else
+            {
+                console.log('go to next question');
+                /*get the value*/
+
+                var value = cur_active_question.attr('data-value');
+                cur_value = cur_value + parseInt(value);
+
+
+                console.log(cur_value);
+
+                /*go to next question*/
+                cur_question++;
+
+                /*reset active question*/
+                question_list.find('.answer').removeClass('active');
+
+                var next_questions = questions[cur_question];
+
+                question.text(next_questions['vraag']);
+                answer1.text(next_questions['piraat']);
+                answer2.text(next_questions['visser']);
+                answer3.text(next_questions['handelaar']);
+                answer4.text(next_questions['kapitein']);
+
+            }
+        }
+
+
+    });
+
+
+
+
+
+</script>
 </body>
 </html>
