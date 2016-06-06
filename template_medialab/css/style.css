@@ -1,0 +1,101 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body *{
+    box-sizing: border-box;
+}
+
+div.app_container{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "ClearSans-Light", ClearSans-Medium ;
+}
+
+.app_beschrijving{
+    padding-right: 10%;
+}
+
+.app_beschrijving > *{
+    margin-bottom: 60px;
+}
+
+.app_introduction{
+    padding: 20px;
+    background-color: #97daeb;
+}
+
+img.app_title{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 200px;
+
+}
+
+p.app_introduction_content{
+    color: #135181;
+    display: block;
+    text-align: right;
+    font-size: 1.6em;
+    padding-left: 20%;
+
+}
+
+.reference{
+    font-size: .8em;
+    color:#FFFFFF ;
+    text-align: right;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.button_container
+{
+    position: relative;
+    padding: 40px 0;
+    background-color: #a31627;
+    width: 100%;
+    height: 200px;
+}
+
+.button_container a.main-btn{
+    position: fixed;
+    right: 10%;
+    margin-top: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    display: block;
+    font-size: 5em;
+    font-weight: bold;
+    text-decoration: none;
+
+
+}
+
+.button_container a.main-btn > *{
+    float: left;
+    margin-right: 10px;
+}
+.button_container a.main-btn:last-child{
+    margin-right: 0;
+}
+.button_container a.main-btn:after{
+    display: block;
+    clear: both;
+    content: '';
+}
+.arrow{
+    margin-left: 20px;
+    display: block;
+    background: url("img/Pijltje-04.png") transparent no-repeat;
+    background-size: cover;
+    width: 145px;
+    height: 97px;
+}
