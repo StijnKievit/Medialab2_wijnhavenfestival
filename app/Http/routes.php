@@ -22,3 +22,6 @@ Route::get('/beverage/{id}', 'ZeeController@getBeverages');
 
 Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
 Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
+
+Route::get('/question/{id}','zeeController@getQuestion');
+Route::get('/question','zeeController@getQuestions');
