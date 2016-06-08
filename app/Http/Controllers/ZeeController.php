@@ -31,6 +31,11 @@ class ZeeController extends Controller
         $this->questionArray = array();
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return Array horeca by $id
+     */
     public function getRestaurants(Request $request, $id)
     {
         return $this->horeca->getHoreca($id);
@@ -79,26 +84,35 @@ class ZeeController extends Controller
         return $this->beverage->getZeebonkBeverages($id);
     }
 
-    public function getQuestions(Request $request)
+    public function getQuestions()
     {
         $questions = $this->question->getQuestions();
 //        var_dump($questions);
         foreach ($questions as $item) {
 //            echo $item['question'];
             $answers = $this->question->getAnswers($item['id']);
-            $answerArray = array();
-            foreach ($answers as $answer){
-                array_push($answerArray, $answer['answer']);
-            }
+//            $answerArray = array();
+//            foreach ($answers as $answer){
+//                array_push($answerArray, $answer['answer']);
+//            }
 
-            array_push($this->questionArray, array('vraag' => $item['question'], 'antwoorden' => $answerArray));
+            array_push($this->questionArray, array('vraag' => $item['question'], 'antwoorden' => $answers));
         }
         return json_encode($this->questionArray);
     }
-    public function getQuestion($id){
-        $question = $this->question->getQuestion($id);
-        $answers = $this->question->getAnswers($id);
+    public function getQuestion(){
+        return view('questions.index', [
+            'questions' => $this->getQuestions(),
+        ]);
+    }
 
+    public function getZeebonkByValue($value){
+        $values = $this->zeebonk->getZeebonkValues();
 
+        foreach ($values as $item){
+            if($value <= $item['max_value']&& $value >= $item['min_value']){
+                return $this->zeebonk->getZeebonkById($item['id']);
+            }
+        }
     }
 }

@@ -1,45 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+@section('content')
+    <div class="app_container">
+        <div class="app_segment">
+            <!--image-->
+            <img class="app_logo" src="css/img/Logo.png" alt="logo app">
         </div>
-    </body>
-</html>
+        <div class="app_segment">
+            <!--content-->
+            <span>Wijnhaven festival 2016</span>
+            <p class="blue">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nulla non purus tempor, varius odio eget, porta lacus.
+            </p>
+        </div>
+        <div class="color_devider_blue">
+
+        </div>
+        <div class="fixed_bottom_section r-background">
+            <!--button-->
+            <a class="main-btn" href="{{url('/question')}}">
+
+                    <span class="btn-icon">
+                        <img class="arrow" src="css/img/Pijltje-04.png" alt=">">
+                    </span>
+                <span class="btn-text">
+                        Doe de test
+                    </span>
+            </a>
+        </div>
+    </div>
+@endsection

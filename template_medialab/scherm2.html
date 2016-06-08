@@ -139,20 +139,21 @@
     /*do get request to server*/
     function getQuestions(){
 
-        /*
 
-        ajax request -> insert url to json source - vragen -> remove quotes
 
-        $.get( "ajax/test.html  - laravel url builder data here!!!", function( data ) {
+//        ajax request -> insert url to json source - vragen -> remove quotes
+
+        $.get( "../server.php/question", function( data ) {
             new_question_string = data;
             console.log('data recieved');
+            console.log(data);
         });
 
 
-        */
+
 
         /*remove after you fixed the ajax call*/
-        new_question_string = '[{"vraag":"De eerste vraag!!!","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De tweede vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De derde vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]}]';
+//        new_question_string = '[{"vraag":"De eerste vraag!!!","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De tweede vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De derde vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]}]';
 
 
 

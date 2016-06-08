@@ -10,7 +10,6 @@ namespace App\Repositories;
 
 use App\Question;
 use App\Answer;
-use App\QuestAns;
 class QuestionsRepository
 {
 //    /**
@@ -37,6 +36,6 @@ class QuestionsRepository
 
     public function getAnswers($id)
     {
-        return Answer::select('answer')->where('question_id', $id)->get();
+        return Answer::select('answer', 'value')->where('question_id', $id)->get();
     }
 }

@@ -25,10 +25,18 @@ class ZeebonkRepository
 //            ->get();
 //    }
 
-    public function getZeebonkById($id){
+    public function getZeebonkById($id)
+    {
         return Zeebonk::where('id', $id)->get();
     }
-    public function getAllZeebonks(){
+
+    public function getAllZeebonks()
+    {
         return Zeebonk::select('id', 'naam', 'max_value', 'min_value')->get();
+    }
+
+    public function getZeebonkValues()
+    {
+        return Zeebonk::select('id', 'max_value', 'min_value')->get();
     }
 }

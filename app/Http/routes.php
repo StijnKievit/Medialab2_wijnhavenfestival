@@ -10,10 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//returns the index page
 Route::get('/', function () {
     return view('welcome');
 });
+
+//returns the questions page
 Route::get('/horeca','ZeeController@getAllRestaurants');
 Route::get('/horeca/{id}','ZeeController@getRestaurants');
 
@@ -22,6 +24,7 @@ Route::get('/beverage/{id}', 'ZeeController@getBeverages');
 
 Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
 Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
+Route::get('/zeebonk/value/{value}', 'zeeController@getZeebonkByValue');
 
-Route::get('/question/{id}','zeeController@getQuestion');
-Route::get('/question','zeeController@getQuestions');
+//Route::get('/question/{id}','zeeController@getQuestion');
+Route::get('/question','zeeController@getQuestion');

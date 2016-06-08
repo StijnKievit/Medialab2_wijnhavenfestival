@@ -1,0 +1,261 @@
+.app_logo{
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+
+.question{
+    font-size: 4em;
+    margin: 0;
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.answer{
+    color: #FFFFFF;
+    background-color: #97daeb;
+    text-align: left;
+    font-size: 4em;
+    width: 100%;
+    padding: 50px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+
+
+}
+
+.answer:first-child{
+    margin-top: 40px;
+}
+
+.answer:last-child{
+    margin-bottom: 40px;
+}
+
+.answer_list{
+    width: 100%;
+    background-color: #135181;
+    padding: 40px;
+}
+
+.next{
+    text-align: right;
+}
+.next > .arrow{
+    float: right;
+    height: 70px;
+}
+.next:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.zeebonk_title_section{
+    height: 400px;
+    position: relative;
+    /*
+    margin-bottom: 40px;
+    */
+}
+
+.zeebonk_bluebar{
+    width: 100%;
+    z-index: 1;
+    display: block;
+    height: 30px;
+    background-color: #97daeb;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+}
+.zeebonk_text_segment{
+   /* width: 80%;*/
+    width: 60%;
+    z-index: 20;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    background-color: #135181;
+    padding: 0 30px;
+}
+
+.zeebonk_background_img{
+    background: url("img/Michiel2.png");
+    background-size: cover;
+    width: 100%;
+    height: 1200px;
+    position: relative;
+}
+
+.zeebonk_background_img p{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    font-size: 2.8em;
+    text-align: right;
+    padding-left: 40%;
+    height: 400px;
+}
+
+.zeebonk_share_bar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background-color: #135181;
+}
+
+.zeebonk_share_bar_buffer{
+    display: block;
+    height: 160px;
+    width: 100%;
+}
+
+.zeebonk_share_bar:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.next_zeebonk{
+    font-size: 2em;
+    height: 160px;
+    float: left;
+
+}
+
+.next_zeebonk .main-btn{
+    display: block;
+    height: 160px;
+}
+
+.next_zeebonk
+.btn-text{
+    margin-top: 35px;
+    float: right;
+    text-transform: none;
+    font-size: 1.35em;
+    margin-right: 20px;
+    font-weight: lighter;
+}
+.next_zeebonk .btn-icon{
+    float: right;
+    margin-right: 40px;
+}
+
+.next_zeebonk .arrow{
+    margin-top: 26px;
+    display: block;
+    height: 70px;
+    width: auto;
+}
+
+.share{
+    display: block;
+    height: 160px;
+    padding: 40px;
+    float: left;
+}
+
+.share_text{
+    font-size: 3em;
+    color: white;
+}
+
+.share_text p{
+    line-height: 160px;
+    text-align: center;
+}
+.share-icon{
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.share_popup{
+    z-index: 1000;
+    width: 80%;
+    margin-left: 10%;
+    position: fixed;
+    top: 100px;
+    background-color: #FFFFFF;
+    color: #135181;
+
+    /*display none*/
+    display: none;
+
+}
+
+.share_popup .text{
+    width: 100%;
+    margin: 40px 0;
+    font-size: 4em;
+    text-align: center;
+}
+
+.share_popup .twitter-button{
+    display: block;
+    background-color: #97daeb;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10%;
+    width: 80%;
+
+    padding: 40px;
+
+    margin-bottom: 40px;
+
+    font-size: 3em;
+    text-decoration: none;
+
+}
+.share_popup .facebook-button{
+    display: block;
+    background-color: #135181;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10%;
+    width: 80%;
+
+    padding: 40px;
+
+    font-size: 3em;
+    text-decoration: none;
+
+    margin-bottom: 40px;
+}
+
+
+.answer.active{
+    background-color: #FFFFFF;
+    color: #135181;
+}
+
+/*progressbar*/
+.progress_bar_red{
+    height: 20px;
+    display: block;
+    width: 100%;
+    background-color: #a31627;
+    margin: 60px 0;
+    position: relative;
+}
+
+.progress_bar_red .progress_bar_value
+{
+    background-color: #ef201b;
+    height: 20px;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+}
