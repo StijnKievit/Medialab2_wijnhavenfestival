@@ -237,3 +237,25 @@
     background-color: #FFFFFF;
     color: #135181;
 }
+
+/*progressbar*/
+.progress_bar_red{
+    height: 20px;
+    display: block;
+    width: 100%;
+    background-color: #a31627;
+    margin: 60px 0;
+    position: relative;
+}
+
+.progress_bar_red .progress_bar_value
+{
+    background-color: #ef201b;
+    height: 20px;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+}

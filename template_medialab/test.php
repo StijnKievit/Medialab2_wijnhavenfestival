@@ -8,10 +8,28 @@
 
 
     $data_array = array(
-        array("vraag" => "De eerste vraag", "piraat" => "Arrrr1", "visser" => 'fishyy1', "handelaar" => 'Echt pittig1', "kapitein" => 'Daar heb ik mensen voor1'),
-        array("vraag" => "De tweede vraag", "piraat" => "Arrrr2", "visser" => 'fishyy2', "handelaar" => 'Echt pittig2', "kapitein" => 'Daar heb ik mensen voor2'),
-        array("vraag" => "De derde vraag", "piraat" => "Arrrr3", "visser" => 'fishyy3', "handelaar" => 'Echt pittig3', "kapitein" => 'Daar heb ik mensen voor3')
-    );
+        array(
+            "vraag" => "De eerste vraag",
+            "antwoorden" => array(
+            array("answer" => "antwoord 1", "value" => 3),  array("answer" => "antwoord 2", "value" => 1),
+            array("answer" => "antwoord 3", "value" => 4),  array("answer" => "antwoord 4", "value" => 6)
+            )
+        ),
+        array(
+            "vraag" => "De eerste vraag",
+            "antwoorden" => array(
+                array("answer" => "antwoord 1", "value" => 3),  array("answer" => "antwoord 2", "value" => 1),
+                array("answer" => "antwoord 3", "value" => 4),  array("answer" => "antwoord 4", "value" => 6)
+            )
+        ),
+        array(
+            "vraag" => "De eerste vraag",
+            "antwoorden" => array(
+                array("answer" => "antwoord 1", "value" => 3),  array("answer" => "antwoord 2", "value" => 1),
+                array("answer" => "antwoord 3", "value" => 4),  array("answer" => "antwoord 4", "value" => 6)
+            )
+        )
+           );
 
     echo json_encode($data_array);
 
