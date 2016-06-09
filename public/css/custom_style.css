@@ -58,7 +58,10 @@
 }
 
 .zeebonk_title_section{
-    height: 400px;
+    /*
+    height: 200px;
+    */
+    height: 160px;
     position: relative;
     /*
     margin-bottom: 40px;
@@ -69,7 +72,7 @@
     width: 100%;
     z-index: 1;
     display: block;
-    height: 30px;
+    height: 15px;
     background-color: #97daeb;
     position: absolute;
     bottom: 40px;
@@ -81,17 +84,17 @@
     z-index: 20;
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 22px;
     left: 10%;
     background-color: #135181;
-    padding: 0 30px;
+    padding: 0 15px;
 }
 
 .zeebonk_background_img{
     background: url("img/Michiel2.png");
     background-size: cover;
     width: 100%;
-    height: 1200px;
+    height: 500px;
     position: relative;
 }
 
@@ -110,13 +113,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 160px;
+    height: 70px;
     background-color: #135181;
 }
 
 .zeebonk_share_bar_buffer{
     display: block;
-    height: 160px;
+    height: 70px;
     width: 100%;
 }
 
@@ -161,18 +164,18 @@
 
 .share{
     display: block;
-    height: 160px;
-    padding: 40px;
+    height: 70px;
+    padding: 20px;
     float: left;
 }
 
 .share_text{
-    font-size: 3em;
+    font-size: 1.8em;
     color: white;
 }
 
 .share_text p{
-    line-height: 160px;
+    line-height: 70px;
     text-align: center;
 }
 .share-icon{
@@ -198,7 +201,7 @@
 .share_popup .text{
     width: 100%;
     margin: 40px 0;
-    font-size: 4em;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -211,9 +214,9 @@
     margin-left: 10%;
     width: 80%;
 
-    padding: 40px;
+    padding: 20px;
 
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     font-size: 3em;
     text-decoration: none;
@@ -228,12 +231,12 @@
     margin-left: 10%;
     width: 80%;
 
-    padding: 40px;
+    padding: 20px;
 
-    font-size: 3em;
+    font-size: 1em;
     text-decoration: none;
 
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 
