@@ -100,18 +100,23 @@ class ZeeController extends Controller
         }
         return json_encode($this->questionArray);
     }
-    public function getQuestion(){
+
+    public function getQuestion()
+    {
         return view('questions.index', [
             'questions' => $this->getQuestions(),
         ]);
     }
 
-    public function getZeebonkByValue($value){
+    public function getZeebonkByValue($value)
+    {
         $values = $this->zeebonk->getZeebonkValues();
 
-        foreach ($values as $item){
-            if($value <= $item['max_value']&& $value >= $item['min_value']){
-                return $this->zeebonk->getZeebonkById($item['id']);
+        foreach ($values as $item) {
+            if ($value <= $item['max_value'] && $value >= $item['min_value']) {
+                return view('questions.result',
+                    ['zeebonk' => $this->zeebonk->getZeebonkById($item['id'])]);
+
             }
         }
     }

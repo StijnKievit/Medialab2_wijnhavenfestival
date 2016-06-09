@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <body>
     <div class="app_container">
         <div class="app_segment">
             <h1 class="question">Wat lijkt jou het mooiste aan het leven op zee?</h1>
@@ -29,7 +30,6 @@
         var cur_value       = 0;
         var cur_question    = 0;
         var max_question    = 0;
-
         var new_question_string = '';
         var question_object;
 
@@ -124,7 +124,7 @@
 
             /*get with param values*/
             /* location.href = 'scherm3.html';*/
-            location.href = "{{url('/')}}"
+            location.href = "{{url('/result/')}}"+"/"+ cur_value;
         }
 
         /*do get request to server*/
@@ -209,4 +209,5 @@
         });
 
     </script>
+    </body>
 @endsection
