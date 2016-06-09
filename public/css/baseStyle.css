@@ -35,7 +35,7 @@ body *{
 .app_segment{
     width: 100%;
     padding: 40px;
-    min-height: 200px;
+    /*min-height: 200px;*/
 }
 
 .no-pad{
