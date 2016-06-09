@@ -89,6 +89,16 @@
     background-color: #135181;
     padding: 0 15px;
 }
+.zeebonk_text_segment_red{
+    width: 60%;
+    z-index: 20;
+    display: block;
+    position: absolute;
+    bottom: 22px;
+    left: 10%;
+    background-color: #a31627;
+    padding: 0 15px;
+}
 
 .zeebonk_background_img{
     background: url("img/Michiel2.png");

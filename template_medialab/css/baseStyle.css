@@ -97,6 +97,13 @@ p.basic{
     font-family: ClearSans-Medium;
 }
 
+p.basic_white{
+    font-size: 2.6em;
+    text-align: left;
+    color: #ffffff;
+    padding: 20px 80px;
+    font-family: ClearSans-Medium;
+}
 p.blue{
     color: #135181;
     text-align: right;

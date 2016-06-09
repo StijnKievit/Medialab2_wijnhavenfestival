@@ -83,6 +83,16 @@
     padding: 0 30px;
 }
 
+.zeebonk_text_segment_red{
+    width: 60%;
+    z-index: 20;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    background-color: #a31627;
+    padding: 0 30px;
+}
 .zeebonk_background_img{
     background: url("img/Michiel2.png");
     background-size: cover;
@@ -258,4 +268,8 @@
     left: 0;
     content: '';
     display: block;
+}
+
+.google_maps{
+
 }
