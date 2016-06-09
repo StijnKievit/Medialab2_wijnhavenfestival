@@ -7,7 +7,9 @@
         <div class="zeebonk_bluebar"></div>
         <div class="zeebonk_text_segment">
             <h2 class="white bot-marg">Je bent een echte...</h2>
-            <h1 class="white size-large no-marg">Handelaar</h1>
+            <h1 class="white size-large no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
+            {!!$zeebonk!!}
+            {!! $gerechten !!}
         </div>
     </div>
     <div class="d-background app_segment no-pad zeebonk_background_img">
@@ -23,9 +25,7 @@
     </div>
     <div class="app_segment b-background">
         <p class=" basic">
-            Varen over de onbekende zeeën en oceanen zit in het bloed van de piraat.
-            Samen met zijn mede piraten genieten ze van al het mooie dat de zee te bieden heeft.
-            Er is niks mooier dan schepen kapen en het uitgeven van de geplunderde schatten.
+            {!! $zeebonk[0]['beschrijving'] !!}
         </p>
         <p class=" basic">
             Niks maakt een piraat blijer dan een lekker sappig stuk <span class="accent_basic">vlees</span> met <span class="accent_basic">bier</span> en <span class="accent_basic">rum</span>!

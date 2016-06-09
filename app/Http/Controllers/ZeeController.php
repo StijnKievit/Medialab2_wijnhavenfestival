@@ -115,8 +115,11 @@ class ZeeController extends Controller
         foreach ($values as $item) {
             if ($value <= $item['max_value'] && $value >= $item['min_value']) {
                 return view('questions.result',
-                    ['zeebonk' => $this->zeebonk->getZeebonkById($item['id'])]);
-
+                    [
+                        'zeebonk' => $this->zeebonk->getZeebonkById($item['id']),
+                        'gerechten' => $this->beverage->getZeebonkBeverages($item['id'])
+                    ]
+                );
             }
         }
     }
