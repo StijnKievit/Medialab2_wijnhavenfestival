@@ -6,10 +6,15 @@
     <div class=" d-background app_segment no-pad zeebonk_title_section">
         <div class="zeebonk_bluebar"></div>
         <div class="zeebonk_text_segment">
-            <h2 class="white bot-marg">Je bent een echte...</h2>
+            <h2 class="white no-marg">Je bent een echte...</h2>
             <h1 class="white size-large no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
+<<<<<<< HEAD
             {{--{!!$zeebonk!!}--}}
             {{--{!! $gerechten !!}--}}
+=======
+          {{--  {!!$zeebonk!!}
+            {!! $gerechten !!}--}}
+>>>>>>> origin/master
         </div>
     </div>
     <div class="d-background app_segment no-pad zeebonk_background_img">

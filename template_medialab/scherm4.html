@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="css/baseStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+</head>
+<body class="r-background">
+<div class="app_container r-background">
+    <div class=" r-background app_segment no-pad zeebonk_title_section">
+        <div class="zeebonk_bluebar"></div>
+        <div class="zeebonk_text_segment_red">
+            <h2 class="white bot-marg">Je bent een echte...</h2>
+            <h1 class="white size-large no-marg">Handelaar</h1>
+        </div>
+    </div>
+    <div class="app_segment">
+        <p class="white basic_white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nulla non purus tempor, varius odio eget, porta lacus.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+    </div>
+    <div class="app_segment no-pad no-marg google_maps" id="map">
+
+    </div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+
+        $('.google_maps').height($('.google_maps').width());
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHPGfeM6_nc8dCiJDrDIBlYW9jS1NY4s&callback=initMap"
+            async defer></script>
+
+</div>
+<div class="fixed_bottom_section r-background">
+
+</div>
+</body>
+</html>
