@@ -8,8 +8,8 @@
         <div class="zeebonk_text_segment">
             <h2 class="white bot-marg">Je bent een echte...</h2>
             <h1 class="white size-large no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
-            {!!$zeebonk!!}
-            {!! $gerechten !!}
+            {{--{!!$zeebonk!!}--}}
+            {{--{!! $gerechten !!}--}}
         </div>
     </div>
     <div class="d-background app_segment no-pad zeebonk_background_img">
@@ -28,7 +28,7 @@
             {!! $zeebonk[0]['beschrijving'] !!}
         </p>
         <p class=" basic">
-            Niks maakt een piraat blijer dan een lekker sappig stuk <span class="accent_basic">vlees</span> met <span class="accent_basic">bier</span> en <span class="accent_basic">rum</span>!
+            {!! $zeebonk[0]['beschrijving_eten'] !!}
         </p>
         <p class=" basic">
             Hiervoor kun je terecht bij de onderstaande horeca:
