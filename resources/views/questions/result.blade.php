@@ -44,28 +44,30 @@
             </p>
         </div>
         <div class="app_segment no-marg no-pad b-background">
+            @foreach( $horeca as $item)
             <div class="horeca_block">
-                <img class="horeca_img" src="{{URL::asset('css/img/Hangar.png')}}" alt="">
-                <a class="horeca_button">
-                    Hangar 85
+                <img class="horeca_img" src="{{URL::asset('css/'.$item->afbeelding)}}" alt="">
+                <a class="horeca_button" href="{{url('map/'.$item->id)}}">
+                    {{$item->naam}}
                 </a>
                 <img class="horeca_arrow" src="{{URL::asset('css/img/Pijltje-04.png')}}">
             </div>
-            <div class="horeca_block">
-                <img class="horeca_img" src="{{URL::asset('css/img/Hangar.png')}}" alt="">
-                <a class="horeca_button">
-                    Hangar 85
-                </a>
-                <img class="horeca_arrow" src="{{URL::asset('css/img/Pijltje-04.png')}}">
-            </div>
-            <div class="horeca_block">
-                <img class="horeca_img" src="{{URL::asset('css/img/Hangar.png')}}" alt="">
-                <a class="horeca_button">
-                    Hangar 85
-                </a>
-                <img class="horeca_arrow" src="{{URL::asset('css/img/Pijltje-04.png')}}">
+            @endforeach
+            {{--<div class="horeca_block">--}}
+                {{--<img class="horeca_img" src="{{URL::asset('css/img/Hangar.png')}}" alt="">--}}
+                {{--<a class="horeca_button">--}}
+                    {{--Hangar 85--}}
+                {{--</a>--}}
+                {{--<img class="horeca_arrow" src="{{URL::asset('css/img/Pijltje-04.png')}}">--}}
+            {{--</div>--}}
+            {{--<div class="horeca_block">--}}
+                {{--<img class="horeca_img" src="{{URL::asset('css/img/Hangar.png')}}" alt="">--}}
+                {{--<a class="horeca_button">--}}
+                    {{--Hangar 85--}}
+                {{--</a>--}}
+                {{--<img class="horeca_arrow" src="{{URL::asset('css/img/Pijltje-04.png')}}">--}}
 
-            </div>
+            {{--</div>--}}
         </div>
         <div class="zeebonk_share_bar_buffer"></div>
 

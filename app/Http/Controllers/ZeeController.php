@@ -112,7 +112,7 @@ class ZeeController extends Controller
                 return view('questions.result',
                     [
                         'zeebonk' => $this->zeebonk->getZeebonkById($item['id']),
-                        'restaurants' => $this->horeca->getHorecaByZeebonkId($item['id'])
+                        'horeca' => $this->horeca->getHorecaByZeebonkId($item['id'])
                     ]
                 );
             }
@@ -120,9 +120,10 @@ class ZeeController extends Controller
     }
     
     public function mapInfo($id){
-        
+        $temp = $this->horeca->getHoreca($id);
         return view('map.index', [
-            'horeca' => $this->horeca->getHoreca($id)
+            'horeca' => $temp,
+            'zeebonk' =>  $this->zeebonk->getZeebonkById($temp[0]['zeebonk'])
         ]);
     }
 }

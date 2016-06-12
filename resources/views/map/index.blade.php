@@ -7,14 +7,14 @@
             <div class="zeebonk_bluebar"></div>
             <div class="zeebonk_text_segment_red">
                 <h2 class="white bot-marg">Je bent een echte...</h2>
-                <h1 class="white size-large no-marg">Handelaar</h1>
+                <h1 class="white size-large no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
+                {{--{!! $zeebonk !!}--}}
+                {{--{!! $horeca !!}--}}
             </div>
         </div>
         <div class="app_segment">
             <p class="white basic_white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla non purus tempor, varius odio eget, porta lacus.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {!! $horeca[0]['beschrijving'] !!}
             </p>
         </div>
         <div class="app_segment no-pad no-marg google_maps" id="map">

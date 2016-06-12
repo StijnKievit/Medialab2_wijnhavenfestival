@@ -34,7 +34,7 @@ class HorecaRepository
         return Horeca::where('id', $id)->get();
     }
     public function getHorecaByZeebonkId($id){
-        return Horeca::select('naam', 'beschrijving', 'afbeelding')->where('zeebonk', $id)->get();
+        return Horeca::select('id', 'naam', 'beschrijving', 'afbeelding')->where('zeebonk', $id)->get();
     }
 }
 
