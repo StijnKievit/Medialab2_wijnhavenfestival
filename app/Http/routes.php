@@ -28,3 +28,5 @@ Route::get('/result/{value}', 'zeeController@getZeebonkByValue');
 
 //Route::get('/question/{id}','zeeController@getQuestion');
 Route::get('/question','zeeController@getQuestion');
+
+Route::get('/map/{id}', 'ZeeController@mapInfo');

@@ -91,11 +91,6 @@ class ZeeController extends Controller
         foreach ($questions as $item) {
 //            echo $item['question'];
             $answers = $this->question->getAnswers($item['id']);
-//            $answerArray = array();
-//            foreach ($answers as $answer){
-//                array_push($answerArray, $answer['answer']);
-//            }
-
             array_push($this->questionArray, array('vraag' => $item['question'], 'antwoorden' => $answers));
         }
         return json_encode($this->questionArray);
@@ -117,10 +112,17 @@ class ZeeController extends Controller
                 return view('questions.result',
                     [
                         'zeebonk' => $this->zeebonk->getZeebonkById($item['id']),
-                        'gerechten' => $this->beverage->getZeebonkBeverages($item['id'])
+                        'restaurants' => $this->horeca->getHorecaByZeebonkId($item['id'])
                     ]
                 );
             }
         }
+    }
+    
+    public function mapInfo($id){
+        
+        return view('map.index', [
+            'horeca' => $this->horeca->getHoreca($id)
+        ]);
     }
 }

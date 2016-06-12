@@ -11,10 +11,10 @@
         </div>
 
         <ul class="answer_list">
-            <li class="answer answer_1" data-value = "1" >Het avontuur</li>
-            <li class="answer answer_2" data-value = "2">De zonsondergang</li>
-            <li class="answer answer_3" data-value = "3">A pirate life for me!</li>
-            <li class="answer answer_4" data-value = "4">Naar mijn dobber staren</li>
+            <li class="answer answer_1" data-value="1">Het avontuur</li>
+            <li class="answer answer_2" data-value="2">De zonsondergang</li>
+            <li class="answer answer_3" data-value="3">A pirate life for me!</li>
+            <li class="answer answer_4" data-value="4">Naar mijn dobber staren</li>
             <span class="next"><img class="arrow" src="css/img/Pijltje-04.png"></span>
         </ul>
 
@@ -27,9 +27,9 @@
         var question = $('.question');
         var next_button = answer_list.find('.next');
 
-        var cur_value       = 0;
-        var cur_question    = 0;
-        var max_question    = 0;
+        var cur_value = 0;
+        var cur_question = 0;
+        var max_question = 0;
         var new_question_string = '';
         var question_object;
 
@@ -38,8 +38,8 @@
 
 
         /*make sure answers are always clickable*/
-        function find_answers(){
-            answer_list.find('.answer').click(function(){
+        function find_answers() {
+            answer_list.find('.answer').click(function () {
 
                 answer_list.find('.answer').removeClass('active');
                 $(this).addClass('active');
@@ -48,7 +48,7 @@
         }
 
         /*initialize function*/
-        function init(){
+        function init() {
             getQuestions();
 
             /*set first content*/
@@ -57,12 +57,13 @@
             /*set question text*/
             question.text(next_questions['vraag']);
 
-            var first_answers = next_questions['antwoorden'];
+            var first_answers = shuffle(next_questions['antwoorden']);
 
+
+            console.log(first_answers);
             answer_list.find('.answer').remove();
 
-            for (i = 0; i < first_answers.length; i++ )
-            {
+            for (i = 0; i < first_answers.length; i++) {
                 answer_list.prepend(
                         $("<li>").addClass('answer').text(first_answers[i].answer).attr('data-value', first_answers[i].value)
                 );
@@ -74,8 +75,7 @@
         }
 
         /*go to the next question*/
-        function next_question()
-        {
+        function next_question() {
             var cur_active_answer = $('.answer.active');
 
             var value = cur_active_answer.attr('data-value');
@@ -89,19 +89,18 @@
             /*reset active question*/
             answer_list.find('.answer').removeClass('active');
 
-            var next_questions = question_object[cur_question];
+            var next_questions = shuffle(question_object[cur_question]);
 
             /*set new questions*/
             question.text(next_questions['vraag']);
 
-            var next_answers = next_questions['antwoorden'];
-
+            var next_answers = shuffle(next_questions['antwoorden']);
+            console.log(next_answers);
             /*clear old answers*/
             answer_list.find('.answer').remove();
 
             /*loop trough answers and prepend new ones*/
-            for (i = 0; i < next_answers.length; i++ )
-            {
+            for (i = 0; i < next_answers.length; i++) {
                 answer_list.prepend(
                         $("<li>").addClass('answer').text(next_answers[i].answer).attr('data-value', next_answers[i].value)
                 );
@@ -110,9 +109,27 @@
             find_answers();
             adjustProgressBar();
         }
+        function shuffle(array) {
+            let counter = array.length;
 
+            // While there are elements in the array
+            while (counter > 0) {
+                // Pick a random index
+                let index = Math.floor(Math.random() * counter);
+
+                // Decrease counter by 1
+                counter--;
+
+                // And swap the last element with it
+                let temp = array[counter];
+                array[counter] = array[index];
+                array[index] = temp;
+            }
+
+            return array;
+        }
         /*question list is completed*/
-        function finish(){
+        function finish() {
 
             var cur_active_answer = $('.answer.active');
             var value = cur_active_answer.attr('data-value');
@@ -124,42 +141,20 @@
 
             /*get with param values*/
             /* location.href = 'scherm3.html';*/
-            location.href = "{{url('/result/')}}"+"/"+ cur_value;
+            location.href = "{{url('/result/')}}" + "/" + cur_value;
         }
 
         /*do get request to server*/
-        function getQuestions(){
-
-
-
-//        ajax request -> insert url to json source - vragen -> remove quotes
-
-//            $.get( "../server.php/question", function( data ) {
-//                new_question_string = data;
-//                console.log('data recieved');
-//                console.log(data);
-//            });
-
-
-
+        function getQuestions() {
             new_question_string = {!! $questions !!};
-                    console.log(new_question_string);
-            /*remove after you fixed the ajax call*/
-//        new_question_string = '[{"vraag":"De eerste vraag!!!","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De tweede vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]},{"vraag":"De derde vraag","antwoorden":[{"answer":"antwoord 1","value":3},{"answer":"antwoord 2","value":1},{"answer":"antwoord 3","value":4},{"answer":"antwoord 4","value":6}]}]';
-
-
-
-            question_object = new_question_string;
-
+            console.log(new_question_string);
+            question_object = shuffle(new_question_string);
             max_question = question_object.length;
             console.log(max_question);
-
-
         }
 
         /*sets progressbar*/
-        function adjustProgressBar()
-        {
+        function adjustProgressBar() {
             console.log(cur_question);
 
             var progress_element = $('.progress_bar_value');
@@ -169,8 +164,7 @@
             /*console.log("cur question =" + cur_question);
              console.log("max questions = " + max_question);*/
 
-            if(cur_question == 0)
-            {
+            if (cur_question == 0) {
                 cur_question_value = 1;
             }
             else {
@@ -185,23 +179,19 @@
 
 
         /*handels click action*/
-        next_button.click(function(e) {
+        next_button.click(function (e) {
 
             /*check if item is selected*/
             var cur_active_question = answer_list.find('.answer.active');
             console.log(cur_active_question.length == 0);
-            if(cur_active_question.length == 0)
-            {
+            if (cur_active_question.length == 0) {
                 alert("U heeft niks ingevuld!");
             }
-            else
-            {
-                if( (cur_question + 1) == max_question)
-                {
+            else {
+                if ((cur_question + 1) == max_question) {
                     finish();
                 }
-                else
-                {
+                else {
                     next_question();
                 }
             }
