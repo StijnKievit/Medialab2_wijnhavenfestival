@@ -50,6 +50,12 @@ body *{
     min-height: 50px;
 }
 
+.fixed_bottom_section_buffer{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+}
+
 .b-background{
     background-color: #97daeb;
 
@@ -99,6 +105,16 @@ p.basic{
     font-family: ClearSans-Medium;
 }
 
+p.basic_white{
+    font-size: 1.2em;
+    text-align: left;
+    color: #FFFFFF;
+    /*
+    padding: 20px 80px;
+    */
+    font-family: ClearSans-Medium;
+}
+
 p.blue{
     color: #135181;
     text-align: right;
@@ -135,6 +151,18 @@ p.blue{
 
 .arrow{
     margin-top: 5px;
+    display: block;
+    height: 30px;
+    width: auto;
+}
+
+.back{
+    padding: 20px 15px;
+    display: block;
+}
+
+.arrow-back{
+
     display: block;
     height: 30px;
     width: auto;
@@ -235,6 +263,7 @@ span.accent_basic{
 
 }
 .horeca_button{
+    text-decoration: none;
     display: block;
     background-color: #a31627;
     color: #FFFFFF;
@@ -242,7 +271,7 @@ span.accent_basic{
     position: absolute;
     bottom: -35px;
     right: 0;
-    text-align: center;
+    text-align: left;
     font-size: 1.8em;
     padding: 16px 20px;
     border-top-left-radius: 5px;
@@ -256,4 +285,9 @@ span.accent_basic{
     display: block;
     height: 30px;
     width: auto;
+}
+
+.google_maps{
+    width: 100%;
+    height: 240px;
 }

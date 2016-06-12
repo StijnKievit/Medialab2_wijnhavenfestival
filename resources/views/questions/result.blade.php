@@ -120,6 +120,10 @@
             pop_up.hide();
         });
 
+        pop_up.find("a").click(function(){
+            alert('Sorry, this function is currently inactive!');
+        });
+
     </script>
     </body>
 @endsection
