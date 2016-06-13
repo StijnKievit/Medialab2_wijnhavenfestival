@@ -43,7 +43,11 @@
                 var marker = new google.maps.Marker({
                     position: horeca_location,
                     map: map,
-                    title: 'Hello World!'
+                    title: 'Horeca!',
+                    icon: "{{URL::asset('css/img/large_pirate-flag.png')}}",
+                    animation: google.maps.Animation.DROP
+
+
                 });
 
 
