@@ -5,8 +5,8 @@
     <div class="app_container r-background">
         <div class=" r-background app_segment no-pad zeebonk_title_section">
             <div class="zeebonk_bluebar"></div>
-            <div class="zeebonk_text_segment_red">
-                <h2 class="white bot-marg"></h2>
+            <div class="zeebonk_text_segment_red horeca-title">
+
                 <h1 class="white size-medium no-marg"> {!! $horeca[0]['naam'] !!}</h1>
                 {{--{!! $zeebonk !!}--}}
                 {{--{!! $horeca !!}--}}
