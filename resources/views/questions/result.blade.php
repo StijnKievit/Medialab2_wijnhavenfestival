@@ -93,37 +93,37 @@
         </ul>-->
 
     </div>
-    <div class="zeebonk_share_bar">
+    <a class="zeebonk_redo_test_bar" href="{{url('/question/')}}">
         <div class="share">
-            <img class="share-icon" src="{{URL::asset('css/img/share-icon-01.png')}}" alt="share">
+            <img class="share-icon" src="{{URL::asset('css/img/pijl-terug.png')}}" alt="share">
         </div>
         <div class="share_text">
-            <p class="white no-marg">Deel met je vrienden!</p>
+            <p class="white no-marg">Doe de test opnieuw!</p>
         </div>
 
-    </div>
-    <div class="share_popup">
-        <p class="text">Deel je type zeebonk!</p>
-        <a href="#" class="twitter-button">Twitter</a>
-        <a href="#" class="facebook-button">Facebook</a>
-    </div>
+    </a>
+    {{--<div class="share_popup">--}}
+        {{--<p class="text">Deel je type zeebonk!</p>--}}
+        {{--<a href="#" class="twitter-button">Twitter</a>--}}
+        {{--<a href="#" class="facebook-button">Facebook</a>--}}
+    {{--</div>--}}
 
-    <script>
-        var share_bar = $('.zeebonk_share_bar');
-        var pop_up = $('.share_popup');
-        var app_container = $('.app_container');
-        share_bar.click(function (e) {
-            pop_up.show();
-        });
+    {{--<script>--}}
+        {{--var share_bar = $('.zeebonk_share_bar');--}}
+        {{--var pop_up = $('.share_popup');--}}
+        {{--var app_container = $('.app_container');--}}
+        {{--share_bar.click(function (e) {--}}
+            {{--pop_up.show();--}}
+        {{--});--}}
 
-        app_container.click(function (e) {
-            pop_up.hide();
-        });
+        {{--app_container.click(function (e) {--}}
+            {{--pop_up.hide();--}}
+        {{--});--}}
 
-        pop_up.find("a").click(function(){
-            alert('Sorry, this function is currently inactive!');
-        });
+        {{--pop_up.find("a").click(function(){--}}
+            {{--alert('Sorry, this function is currently inactive!');--}}
+        {{--});--}}
 
-    </script>
+    {{--</script>--}}
     </body>
 @endsection

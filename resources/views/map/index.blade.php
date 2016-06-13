@@ -33,26 +33,26 @@
 
                 /*for test purposes map is centerd on horeca location (set to festival location on release) */
                 map = new google.maps.Map(document.getElementById('map'), {
-                    center: horeca_location,
+                    center: festival_location,
                     zoom: 16,
                     disableDefaultUI: true
 
                 });
 
-                if(navigator.geolocation) {
-                    browserSupportFlag = true;
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                        map.setCenter(initialLocation);
-                    }, function() {
-                        handleNoGeolocation(browserSupportFlag);
-                    });
-                }
-                // Browser doesn't support Geolocation
-                else {
-                    browserSupportFlag = false;
-                    handleNoGeolocation(browserSupportFlag);
-                }
+//                if(navigator.geolocation) {
+//                    browserSupportFlag = true;
+//                    navigator.geolocation.getCurrentPosition(function(position) {
+//                        initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+//                        map.setCenter(initialLocation);
+//                    }, function() {
+//                        handleNoGeolocation(browserSupportFlag);
+//                    });
+//                }
+//                // Browser doesn't support Geolocation
+//                else {
+//                    browserSupportFlag = false;
+//                    handleNoGeolocation(browserSupportFlag);
+//                }
 
                 /*add location marker*/
                 var marker = new google.maps.Marker({
@@ -62,14 +62,14 @@
                 });
 
 
-                function handleNoGeolocation(errorFlag) {
-                    if (errorFlag == true) {
-                        console.log("Geolocation service failed." + errorFlag);
-                    } else {
-                        console.log("Your browser doesn't support geolocation. We've placed you in Siberia.");
-                    }
-                    map.setCenter(initialLocation);
-                }
+//                function handleNoGeolocation(errorFlag) {
+//                    if (errorFlag == true) {
+//                        console.log("Geolocation service failed." + errorFlag);
+//                    } else {
+//                        console.log("Your browser doesn't support geolocation. We've placed you in Siberia.");
+//                    }
+//                    map.setCenter(initialLocation);
+//                }
             }
 
          /*   $('.google_maps').height($('.google_maps').width());*/
