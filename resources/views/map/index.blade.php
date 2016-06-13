@@ -12,6 +12,9 @@
                 {{--{!! $horeca !!}--}}
             </div>
         </div>
+        <div class="app_segment no-pad">
+            <img class="img-responsive" src="{{URL::asset($horeca[0]['afbeelding'])}}" alt="horecaImage">
+        </div>
         <div class="app_segment">
             <p class="white basic_white">
                 {!! $horeca[0]['beschrijving'] !!}

@@ -31,7 +31,7 @@
         <div class="app_segment no-marg no-pad b-background">
             @foreach( $horeca as $item)
             <div class="horeca_block">
-                <img class="horeca_img" src="{{URL::asset('css/'.$item->afbeelding)}}" alt="">
+                <img class="horeca_img" src="{{URL::asset($item->afbeelding)}}" alt="">
                 <a class="horeca_button" href="{{url('map/'.$item->id)}}">
                     {{$item->naam}}
                 </a>
