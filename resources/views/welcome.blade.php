@@ -17,6 +17,9 @@
         {{--<div class="color_devider_blue">
 
         </div>--}}
+        <div class="fixed_bottom_section_buffer">
+
+        </div>
         <div class="fixed_bottom_section r-background">
             <!--button-->
             <a class="main-btn" href="{{url('/question')}}">

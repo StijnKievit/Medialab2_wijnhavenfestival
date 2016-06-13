@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body>
+    <body class="d-background">
     <div class="app_container">
         <div class="app_segment">
             <h1 class="question">Wat lijkt jou het mooiste aan het leven op zee?</h1>
