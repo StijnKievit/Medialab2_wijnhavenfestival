@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Vind de zeebonk in jezelf</title>
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/normalize.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/font.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/baseStyle.css')}}">
