@@ -93,15 +93,15 @@
         </ul>-->
 
     </div>
-    <div class="zeebonk_share_bar">
+    <a class="zeebonk_redo_test_bar" href="{{url('/question/')}}">
         <div class="share">
-            <img class="share-icon" src="{{URL::asset('css/img/share-icon-01.png')}}" alt="share">
+            <img class="share-icon" src="{{URL::asset('css/img/pijl-terug.png')}}" alt="share">
         </div>
         <div class="share_text">
-            <p class="white no-marg">Deel met je vrienden!</p>
+            <p class="white no-marg">Doe de test opnieuw!</p>
         </div>
 
-    </div>
+    </a>
     <div class="share_popup">
         <p class="text">Deel je type zeebonk!</p>
         <a href="#" class="twitter-button">Twitter</a>
@@ -110,7 +110,7 @@
 
     <script>
         var arrow_down_container = $('.arrow_down_container');
-        var zeebonk_share_bar = $('.zeebonk_share_bar');
+        var zeebonk_share_bar = $('.zeebonk_redo_test_bar');
         var arrow_down_base_pos = arrow_down_container.position();
         var window_height;
 
