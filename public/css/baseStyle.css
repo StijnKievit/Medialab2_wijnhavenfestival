@@ -314,6 +314,14 @@ span.accent_basic{
     height: 240px;
 }
 
+@media screen and (min-width: 700px) {
+
+    .google_maps{
+        width: 100%;
+        height: 480px;
+    }
+}
+
 .size-medium{
     font-size: 2em;
 }

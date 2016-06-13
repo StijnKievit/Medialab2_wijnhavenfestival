@@ -126,6 +126,7 @@
     height: 70px;
     background-color: #135181;
     text-decoration: none;
+    z-index: 10000;
 }
 
 .zeebonk_share_bar_buffer{
