@@ -9,14 +9,14 @@
         <div class="app_segment">
             <!--content-->
             <span>Wijnhaven festival 2016</span>
-            <p class="blue">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla non purus tempor, varius odio eget, porta lacus.
+            <p class="blue extra-space">
+
+                Ontdek de zeebonk in jezelf en geniet van de gerechten die bij jou passen.
             </p>
         </div>
-        <div class="color_devider_blue">
+        {{--<div class="color_devider_blue">
 
-        </div>
+        </div>--}}
         <div class="fixed_bottom_section r-background">
             <!--button-->
             <a class="main-btn" href="{{url('/question')}}">

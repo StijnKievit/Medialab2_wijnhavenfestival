@@ -15,7 +15,7 @@
             <li class="answer answer_2" data-value="2">De zonsondergang</li>
             <li class="answer answer_3" data-value="3">A pirate life for me!</li>
             <li class="answer answer_4" data-value="4">Naar mijn dobber staren</li>
-            <span class="next"><img class="arrow" src="css/img/Pijltje-04.png"></span>
+           {{-- <span class="next"><img class="arrow" src="css/img/Pijltje-04.png"></span>--}}
         </ul>
 
     </div>
@@ -25,7 +25,7 @@
         /*main variables*/
         var answer_list = $('.answer_list');
         var question = $('.question');
-        var next_button = answer_list.find('.next');
+       /* var next_button = answer_list.find('.next');*/
 
         var cur_value = 0;
         var cur_question = 0;
@@ -44,6 +44,7 @@
                 answer_list.find('.answer').removeClass('active');
                 $(this).addClass('active');
                 console.log('item is clicked');
+                selectQuestion();
             });
         }
 
@@ -110,18 +111,18 @@
             adjustProgressBar();
         }
         function shuffle(array) {
-            let counter = array.length;
+            var counter = array.length;
 
             // While there are elements in the array
             while (counter > 0) {
                 // Pick a random index
-                let index = Math.floor(Math.random() * counter);
+                var index = Math.floor(Math.random() * counter);
 
                 // Decrease counter by 1
                 counter--;
 
                 // And swap the last element with it
-                let temp = array[counter];
+                var temp = array[counter];
                 array[counter] = array[index];
                 array[index] = temp;
             }
@@ -178,9 +179,26 @@
         }
 
 
-        /*handels click action*/
+       /* /!*handels click action*!/
         next_button.click(function (e) {
+            /!*check if item is selected*!/
+            var cur_active_question = answer_list.find('.answer.active');
+            console.log(cur_active_question.length == 0);
+            if (cur_active_question.length == 0) {
+                alert("U heeft niks ingevuld!");
+            }
+            else {
+                if ((cur_question + 1) == max_question) {
+                    finish();
+                }
+                else {
+                    next_question();
+                }
+            }
 
+        });*/
+
+        function selectQuestion(){
             /*check if item is selected*/
             var cur_active_question = answer_list.find('.answer.active');
             console.log(cur_active_question.length == 0);
@@ -196,7 +214,7 @@
                 }
             }
 
-        });
+        }
 
     </script>
     </body>
