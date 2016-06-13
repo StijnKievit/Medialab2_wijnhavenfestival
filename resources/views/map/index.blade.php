@@ -7,7 +7,7 @@
             <div class="zeebonk_bluebar"></div>
             <div class="zeebonk_text_segment_red">
                 <h2 class="white bot-marg"></h2>
-                <h1 class="white size-large no-marg"> {!! $horeca[0]['naam'] !!}</h1>
+                <h1 class="white size-medium no-marg"> {!! $horeca[0]['naam'] !!}</h1>
                 {{--{!! $zeebonk !!}--}}
                 {{--{!! $horeca !!}--}}
             </div>

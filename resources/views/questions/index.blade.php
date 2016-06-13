@@ -109,6 +109,7 @@
 
             find_answers();
             adjustProgressBar();
+            scrollToTop();
         }
         function shuffle(array) {
             var counter = array.length;
@@ -214,6 +215,11 @@
                 }
             }
 
+        }
+
+        function scrollToTop(){
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         }
 
     </script>

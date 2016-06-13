@@ -109,6 +109,40 @@
     </div>
 
     <script>
+        var arrow_down_container = $('.arrow_down_container');
+        var zeebonk_share_bar = $('.zeebonk_share_bar');
+        var arrow_down_base_pos = arrow_down_container.position();
+        var window_height;
+
+        $(window).scroll(function (event) {
+
+            console.log(getWindowHeight());
+            console.log();
+
+            if($(window).scrollTop() < 150)
+            {
+                console.log('position is fixed');
+                zeebonk_share_bar.hide();
+                arrow_down_container.show();
+            }
+            else {
+                zeebonk_share_bar.show();
+                arrow_down_container.hide();
+            }
+
+        });
+
+        function getWindowHeight(){
+            return $(window).height();
+        }
+
+        console.log(arrow_down_container.position());
+        console.log($(window).height());
+
+
+    </script>
+
+    {{--<script>
         var share_bar = $('.zeebonk_share_bar');
         var pop_up = $('.share_popup');
         var app_container = $('.app_container');
@@ -124,6 +158,8 @@
             alert('Sorry, this function is currently inactive!');
         });
 
-    </script>
+    </script>--}}
+
+
     </body>
 @endsection
