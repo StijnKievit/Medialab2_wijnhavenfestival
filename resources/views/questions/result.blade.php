@@ -11,29 +11,9 @@
                   {{--{!!$zeebonk!!}--}}
                   {{--{!! $horeca !!}--}}
             </div>
-            <style>
-                .zeebonk_background_img {
-                    background: url("{{URL::asset("css/".$zeebonk[0]['afbeelding'])}}") #134181;
-                    background-size: cover;
-                    width: 100%;
-                    height: 500px;
-                    position: relative;
 
-                }
-
-                @media screen and (min-width: 700px) {
-                    .zeebonk_background_img {
-
-                        width: 100%;
-                        height: 1000px;
-
-
-                    }
-                }
-            </style>
         </div>
-        <div class="d-background app_segment no-pad zeebonk_background_img">
-        </div>
+        <img class="zeebonk_img" src="{{URL::asset("css/".$zeebonk[0]['afbeelding'])}}" style="display: block; width: 100%; height: auto">
         <div class="arrow_down_container d-background">
             <img class="arrow-down" src="{{URL::asset('css/img/pijlomlaag-01.png')}}" alt="v">
         </div>

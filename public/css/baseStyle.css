@@ -325,3 +325,10 @@ span.accent_basic{
 .size-medium{
     font-size: 2em;
 }
+
+.zeebonk_img{
+    display: block;
+    width: 100%;
+    height: auto;
+
+}

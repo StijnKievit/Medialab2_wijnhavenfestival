@@ -3,23 +3,19 @@
  */
 var arrow_down_container = $('.arrow_down_container');
 var zeebonk_share_bar = $('.zeebonk_redo_test_bar');
-var arrow_down_base_pos = arrow_down_container.position();
-var window_height;
+var zeebonk_img = $('.zeebonk_img');
+var bar_height = 60;
 
 $(window).ready(function(e){
     check_bar_positions();
+
+    console.log(zeebonk_img.position());
 });
 
 arrow_down_container.click(function(e){
 
     var main_content = $('.main_content');
-
-/*    console.log(main_content.position().top);*/
-
     $("html, body").animate({ scrollTop: main_content.position().top }, 600);
-
-    /* window.scrollBy(0,670);*/
-    /*console.log('scroll to content');*/
 
 
 });
@@ -29,12 +25,9 @@ $(window).scroll(function (event) {
 });
 
 function check_bar_positions(){
-   /* console.log(getWindowHeight());
-    console.log();*/
 
-    if($(window).scrollTop() < 150)
+    if(  ( getTopScroll() + getWindowHeight()  ) < getImageLimit() + bar_height + zeebonk_img.height())
     {
-        /*console.log('position is fixed');*/
         zeebonk_share_bar.hide();
         arrow_down_container.show();
     }
@@ -48,6 +41,12 @@ function getWindowHeight(){
     return $(window).height();
 }
 
-/*console.log(arrow_down_container.position());
-console.log($(window).height());*/
+function getTopScroll(){
+    return $(window).scrollTop();
+}
+
+function getImageLimit(){
+    return zeebonk_img.position().top;
+}
+
 
