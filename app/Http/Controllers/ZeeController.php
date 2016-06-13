@@ -32,6 +32,7 @@ class ZeeController extends Controller
     }
 
     /**
+     * returns a array with a restaurant based on the id given
      * @param Request $request
      * @param $id
      * @return Array horeca by $id
@@ -41,11 +42,22 @@ class ZeeController extends Controller
         return $this->horeca->getHoreca($id);
     }
 
+    /**
+     * returns a array with all the restaurants available
+     * @param Request $request
+     * @return mixed
+     */
     public function getAllRestaurants(Request $request)
     {
         return $this->horeca->getAllHoreca();
     }
 
+    /**
+     * return a array with all consumtions available
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
     public function getBeverages(Request $request, $id)
     {
         return $this->beverage->getBeverage($id);
@@ -64,19 +76,11 @@ class ZeeController extends Controller
     public function getAllZeebonkTypes(Request $request)
     {
         return $this->zeebonk->getAllZeebonks();
-
-        $zeebonken = $this->zeebonk->getAllZeebonks();
-
-        foreach ($zeebonken as $item) {
-            var_dump($item['id']);
-            return $this->bevhor->horecaByBeverageId($item['id']);
-        }
     }
 
     public function getZeebonk(Request $request, $id)
     {
         return $this->zeebonk->getZeebonkById($id);
-
     }
 
     public function getZeebonkBeverages(Request $request, $id)
