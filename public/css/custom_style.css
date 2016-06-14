@@ -16,8 +16,8 @@
 }
 
 .answer{
-    color: #FFFFFF;
-    background-color: #97daeb;
+    color: #135181;
+    background-color: #ffffff;
     text-align: left;
     font-size: 1.2em;
     width: 100%;
@@ -39,7 +39,9 @@
 
 .answer_list{
     width: 100%;
+    /*
     background-color: #135181;
+    */
     padding: 20px 40px;
 }
 

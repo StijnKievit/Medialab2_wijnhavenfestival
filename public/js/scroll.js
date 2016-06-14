@@ -7,9 +7,9 @@ var zeebonk_img = $('.zeebonk_img');
 var bar_height = 60;
 
 $(window).ready(function(e){
+    arrow_down_container.show();
+    zeebonk_share_bar.hide();
     check_bar_positions();
-
-    console.log(zeebonk_img.position());
 });
 
 arrow_down_container.click(function(e){

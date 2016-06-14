@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="d-background">
+    <body class="b-background">
     <div class="app_container">
-        <div class="app_segment">
+        <div class="app_segment d-background">
             <h1 class="question">Wat lijkt jou het mooiste aan het leven op zee?</h1>
         </div>
         <div class="progress_bar_red">
             <span class="progress_bar_value"></span>
         </div>
 
-        <ul class="answer_list">
+        <ul class="answer_list b-background">
             <li class="answer answer_1" data-value="1">Het avontuur</li>
             <li class="answer answer_2" data-value="2">De zonsondergang</li>
             <li class="answer answer_3" data-value="3">A pirate life for me!</li>

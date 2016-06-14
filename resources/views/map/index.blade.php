@@ -47,7 +47,7 @@
                     position: horeca_location,
                     map: map,
                     title: 'Horeca!',
-                    icon: "{{URL::asset('css/img/large_pirate-flag.png')}}",
+                    icon: "{{URL::asset('css/img/Rode-vlag.png')}}",
                     animation: google.maps.Animation.DROP
 
 
