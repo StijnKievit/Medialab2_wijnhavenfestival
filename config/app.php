@@ -156,6 +156,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        'Jenssegers\Agent\AgentServiceProvider',
+
     ],
 
     /*
@@ -171,6 +173,7 @@ return [
 
     'aliases' => [
 
+        'Agent' => 'Jenssegers\Agent\Facades\Agent',
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
