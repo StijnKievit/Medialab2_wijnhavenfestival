@@ -57,18 +57,6 @@
 
             </div>
         </div>
-       {{-- <footer class="row d-background">
-            <div class="grid-1">
-               <span class="no-marg no-pad span-normal">
-                   Dit product is ontwikkeld in samenwerking met Wijnhaven festival 2016 &#174; & Hogeschool Rotterdam&#174;
-               </span>
-               <span class="no-pad no-marg span-normal">
-                   Ontwikkelaars: Justin, Patrick, Sarella & Stijn
-               </span>
-
-
-            </div>
-        </footer>--}}
 
     </div>
 

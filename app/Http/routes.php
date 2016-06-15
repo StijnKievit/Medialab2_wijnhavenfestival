@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-//returns the index page
+
+
+
 use Jenssegers\Agent\Agent;
 
 $agent = new Agent();

@@ -12,21 +12,14 @@ use App\Horeca;
 
 class HorecaRepository
 {
-//    /**
-//     * Get all of the tasks for a given user.
-//     *
-//     * @param  User  $user
-//     * @return Collection
-//     */
-//    public function forUser(User $user)
-//    {
-//        return Task::where('user_id', $user->id)
-//            ->orderBy('created_at', 'asc')
-//            ->get();
-//    }
+    /**
+     * 
+     * handel's all the database interactions for horeca
+     * 
+     */
     public function getAllHoreca()
     {
-        return Horeca::get();
+        return Horeca::where('show_index' , 0)->get();
     }
 
     public function getHoreca($id)

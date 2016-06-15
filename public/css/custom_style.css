@@ -101,14 +101,14 @@
     padding: 0 15px;
 }
 
-.zeebonk_background_img{
-    background: url("img/Michiel2.png");
-    background-size: cover;
-    width: 100%;
-    height: 500px;
-    position: relative;
+/*.zeebonk_background_img{*/
+    /*background: url("img/Michiel2.png");*/
+    /*background-size: cover;*/
+    /*width: 100%;*/
+    /*height: 500px;*/
+    /*position: relative;*/
 
-}
+/*}*/
 
 .zeebonk_background_img p{
     position: absolute;
@@ -356,4 +356,10 @@
     display: block;
     font-weight: bold;
     text-decoration: none;
+}
+.footer_right{
+    text-align: right;
+}
+.footer_segment{
+    padding-bottom: 55px;
 }

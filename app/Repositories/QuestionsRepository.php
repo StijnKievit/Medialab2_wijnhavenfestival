@@ -12,18 +12,11 @@ use App\Question;
 use App\Answer;
 class QuestionsRepository
 {
-//    /**
-//     * Get all of the tasks for a given user.
-//     *
-//     * @param  User  $user
-//     * @return Collection
-//     */
-//    public function forUser(User $user)
-//    {
-//        return Task::where('user_id', $user->id)
-//            ->orderBy('created_at', 'asc')
-//            ->get();
-//    }
+    /**
+     *
+     * handel's all the database interactions for the questions and answers
+     *
+     */
     public function getQuestions()
     {
         return Question::get();

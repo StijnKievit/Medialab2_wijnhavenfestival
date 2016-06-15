@@ -36,7 +36,7 @@ class ZeeController extends Controller
         $this->beverageArray = array();
         $this->agent = new Agent();
         if ($this->agent->isDesktop()) {
-            $this->view='desktop.';
+            $this->view = 'desktop.';
         } else {
             $this->view = 'mobile.';
         }
@@ -46,7 +46,7 @@ class ZeeController extends Controller
      * returns a array with a restaurant based on the id given
      * @param Request $request
      * @param $id
-     * @return Array horeca by $id
+     * Array horeca by $id
      */
     public function getRestaurants(Request $request, $id)
     {
@@ -98,7 +98,7 @@ class ZeeController extends Controller
     {
         return $this->beverage->getZeebonkBeverages($id);
     }
-
+    //returns a jsonArray with all the questions and the answers for it
     public function getQuestions()
     {
         $questions = $this->question->getQuestions();
@@ -111,13 +111,14 @@ class ZeeController extends Controller
         return json_encode($this->questionArray);
     }
 
+    //asks for the questions and sends it to the view
     public function getQuestion()
     {
         return view($this->view . 'questions.index', [
             'questions' => $this->getQuestions(),
         ]);
     }
-
+    //this processes the score of the user, and gives the corosponding data to the view
     public function getZeebonkByValue($value)
     {
         $values = $this->zeebonk->getZeebonkValues();
@@ -133,9 +134,9 @@ class ZeeController extends Controller
             }
         }
     }
-
+    //returns a jsonarray with all the food for the restaurant given to it
     protected function getFoodByHorId($id)
-    {   
+    {
         $BeveragesIds = $this->bevhor->beverageByHorecaId($id);
 
         foreach ($BeveragesIds as $item) {
@@ -144,6 +145,7 @@ class ZeeController extends Controller
         return json_encode($this->beverageArray);
     }
 
+    //gathers all the data needed for the map view. and pushes that with the view
     public function mapInfo($id)
     {
         $temp = $this->horeca->getHoreca($id);
@@ -153,8 +155,11 @@ class ZeeController extends Controller
             'zeebonk' => $this->zeebonk->getZeebonkById($temp[0]['zeebonk'])
         ]);
     }
-    public function getDesktopIndex(){
-        return view('desktop.welcome',[
+
+    //pulls horeca data from the repository and returns the desktop welcome view
+    public function getDesktopIndex()
+    {
+        return view('desktop.welcome', [
             'horeca' => $this->horeca->getAllHoreca(),
         ]);
     }

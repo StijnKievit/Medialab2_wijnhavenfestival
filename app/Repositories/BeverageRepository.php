@@ -12,6 +12,11 @@ use App\Beverage;
 
 class BeverageRepository
 {
+    /**
+     *
+     * handel's all the database interactions for beverages/food
+     *
+     */
     public function getAllBeverage()
     {
         return Beverage::select('id', 'naam', 'type')->get();

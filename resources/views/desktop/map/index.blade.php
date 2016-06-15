@@ -2,6 +2,7 @@
 
 @section('content')
     <body>
+    <script>$('.google_maps').css('height' ,$('#main_content').height());</script>
     <div class="app_container b-background">
         <div class="row">
             <div class="grid-1-2" id="main_content">
@@ -48,8 +49,9 @@
                         map = new google.maps.Map(document.getElementById('map'), {
                             center: festival_location,
                             zoom: 16,
-                            disableDefaultUI: true
-
+                            disableDefaultUI: true,
+                            draggable: false,
+                            scrollwheel: false
                         });
 
                         /*add location marker*/
@@ -72,28 +74,28 @@
                         async defer></script>
 
 
-                <div class="app_segment no-pad b-background">
-                    <div class="app_segment">
-                        <h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>
-                    </div>
+                {{--<div class="app_segment no-pad b-background">--}}
+                    {{--<div class="app_segment">--}}
+                        {{--<h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>--}}
+                    {{--</div>--}}
 
-                        <div class="Food_items" style="overflow-y: scroll;">
+                        {{--<div class="Food_items" style="overflow-y: scroll;">--}}
 
-                        </div>
+                        {{--</div>--}}
 
 
-                </div>
+                {{--</div>--}}
 
             </div>
 
-            <script>
-                $.each( {!!$gerechten !!}, function (i, val) {
-                    console.log(val[0]);
-                    var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';
-                    $('.Food_items').append(gerechtElement);
-                });
-                $('.beverages_container').first().addClass('first');
-            </script>
+            {{--<script>--}}
+                {{--$.each( {!!$gerechten !!}, function (i, val) {--}}
+                    {{--console.log(val[0]);--}}
+                    {{--var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';--}}
+                    {{--$('.Food_items').append(gerechtElement);--}}
+                {{--});--}}
+                {{--$('.beverages_container').first().addClass('first');--}}
+            {{--</script>--}}
 
         </div>
     </div>

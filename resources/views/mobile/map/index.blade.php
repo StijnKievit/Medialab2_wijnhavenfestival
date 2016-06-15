@@ -39,7 +39,9 @@
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: festival_location,
                     zoom: 16,
-                    disableDefaultUI: true
+                    disableDefaultUI: true,
+                    draggable: false,
+                    scrollwheel: false
 
                 });
 
@@ -64,14 +66,14 @@
 
 
 
-        <div class="app_segment no-pad b-background">
-            <div class="app_segment">
-                <h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>
-            </div>
-            <div class="Food_items">
+        {{--<div class="app_segment no-pad b-background">--}}
+            {{--<div class="app_segment">--}}
+                {{--<h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>--}}
+            {{--</div>--}}
+            {{--<div class="Food_items">--}}
 
-            </div>
-        </div>
+            {{--</div>--}}
+        {{--</div>--}}
 
     </div>
     <div class="fixed_bottom_section_buffer">
@@ -84,14 +86,14 @@
         </a>
 
     </div>
-    <script>
-        $.each({!! $gerechten !!}, function (i, val) {
-            console.log(val[0]);
-            var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';
-            $('.Food_items').append(gerechtElement);
-        });
-        $('.beverages_container').first().addClass('first');
-    </script>
+    {{--<script>--}}
+        {{--$.each({!! $gerechten !!}, function (i, val) {--}}
+            {{--console.log(val[0]);--}}
+            {{--var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';--}}
+            {{--$('.Food_items').append(gerechtElement);--}}
+        {{--});--}}
+        {{--$('.beverages_container').first().addClass('first');--}}
+    {{--</script>--}}
 
     <script>
         var fixed_bar = $('.fixed_bottom_section');
