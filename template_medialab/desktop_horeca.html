@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="css/baseStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="application/javascript" href="desktop_adjust_section.js"></script>
+</head>
+<body>
+    <div class="app_container b-background">
+        <div class="row">
+            <div class="grid-1-2" id="main_content">
+                <div class=" r-background app_segment no-pad zeebonk_title_section">
+                    <div class="zeebonk_bluebar"></div>
+                    <div class="zeebonk_text_segment_red horeca-title">
+
+                        <h1 class="white size-large no-marg center-text"> H20-hotel</h1>
+                    </div>
+                </div>
+                <div class="app_segment no-pad r-background">
+                    <img class="img-responsive" src="http://jouzeebonk.dev/img/H20tel_1.jpg" alt="horecaImage">
+                </div>
+                <div class="app_segment r-background">
+                    <p class="white basic_white">
+                        Het H20tel is een schip, omgetoverd tot 3-sterren-hotel. Tussen 1300 en 1700 kun je genieten van een heerlijke H20-cocktail en een rondvaart door de Wijnhaven. Van 1500 tot 2100 staat er een special tasting event op het programma: samen met de hotelchefs worden er verschillende kleine gerechtjes geserveerd voor de echte fijnproever. De kids kunnen worden geschminkt tot échte zeebonk op het drijvende terras!
+                    </p>
+                </div>
+                <div class=" r-background">
+                    <a class="back" href="http://jouzeebonk.dev/result/12">
+                        <img src="http://jouzeebonk.dev/css/img/pijl-terug.png" alt="<" class="arrow-back">
+                    </a>
+
+                </div>
+            </div>
+            <div class="grid-1-2 no-pad" id="sub_content" style="overflow-y: auto">
+                <div class="app_segment no-pad no-marg google_maps" id="map">
+
+                </div>
+                <script>
+                    var map;
+                    function initMap() {
+
+                        var festival_location = {lat: 51.917573, lng: 4.487205};
+
+                        /*var horeca_lat = "51.917263";
+                        var horeca_long = "4.487115";
+                        var horeca_location = {lat: Number(horeca_lat), lng: Number(horeca_long)};*/
+
+
+                        /*for test purposes map is centerd on horeca location (set to festival location on release) */
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: festival_location,
+                            zoom: 16,
+                            disableDefaultUI: true
+
+                        });
+
+                        /*add location marker*/
+                        var marker = new google.maps.Marker({
+                            position: festival_location,
+                            map: map,
+                            title: 'Horeca!',
+                            icon: "http://jouzeebonk.dev/css/img/Rode-vlag.png",
+                            animation: google.maps.Animation.DROP
+
+
+                        });
+
+
+                    }
+
+                    /*   $('.google_maps').height($('.google_maps').width());*/
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHPGfeM6_nc8dCiJDrDIBlYW9jS1NY4s&callback=initMap"
+                        async defer></script>
+
+
+
+                <div class="app_segment no-pad b-background">
+                    <div class="app_segment">
+                        <h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>
+                    </div>
+                    <div class="Food_items" style="overflow-y: scroll">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                $.each([[{"id":1,"zeebonk_id":1,"naam":"Bier","beschrijving":"een alcoholische drank","afbeelding":"123456","type":"drank","created_at":null,"updated_at":null}],[{"id":2,"zeebonk_id":1,"naam":"Friet","beschrijving":"Lekkere friet","afbeelding":"1234556","type":"eten","created_at":null,"updated_at":null}]], function (i, val) {
+                    console.log(val[0]);
+                    var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';
+                    $('.Food_items').append(gerechtElement);
+                });
+                $('.beverages_container').first().addClass('first');
+            </script>
+
+            </div>
+        </div>
+
+    <script type="application/javascript">
+    </script>
+
+<script type="application/javascript">
+
+    var padding_bar = $(".padding_bar");
+    var align_element = $(".zeebonk_bluebar");
+
+    console.log(align_element.position());
+
+    padding_bar.height(align_element.position().top);
+
+</script>
+
+</body>
+</html>
