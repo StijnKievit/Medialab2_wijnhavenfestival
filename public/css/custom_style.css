@@ -345,3 +345,15 @@
 .first{
     margin-top: -25px;
 }
+
+.redo-test-btn{
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #135181;
+    font-size: 1.6em;
+    text-align: center;
+    padding: 20px;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+}
