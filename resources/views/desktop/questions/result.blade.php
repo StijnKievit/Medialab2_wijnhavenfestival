@@ -14,7 +14,7 @@
 
                 </div>
                 <img class="zeebonk_img" src="{{URL::asset("css/".$zeebonk[0]['afbeelding'])}}"
-                     style="display: block; width: 100%; height: auto">
+                     style="display: block; width: 60%; height: auto; margin-left: 20%">
                 <div class="app_segment">
                     <a href="{{url('/question')}}" class="redo-test-btn">Doe de test opnieuw</a>
                 </div>
@@ -23,7 +23,9 @@
                 <div class="padding_bar d-background">
 
                 </div>
+
                 <div class="app_segment b-background main_content">
+
                     <p class=" basic">
                         {!! $zeebonk[0]['beschrijving'] !!}
                     </p>
@@ -72,6 +74,39 @@
         padding_bar.height(align_element.position().top);
 
     </script>
+
+  <script type="application/javascript">
+      var main_content = $("#main_content");
+      var sub_content = $("#sub_content");
+
+      function adjustSubContent(){
+          sub_content.height(main_content.height());
+
+      }
+      function setMainContent(main_content){
+          main_content = $(main_content);
+      }
+      function setSubContent(sub_content){
+          sub_content = $(sub_content);
+      }
+      function scrollable(bool){
+
+          if(bool){
+              sub_content.css("overflow", "scroll");
+          }
+          else {
+              sub_content.css("overflow", "auto");
+          }
+      }
+
+      $(document).ready(function(){
+
+          setMainContent("#main_content");
+          setSubContent("#sub_content");
+          adjustSubContent();
+
+      });
+  </script>
 
     </body>
 @endsection
