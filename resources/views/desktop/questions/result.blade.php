@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body>
+    <body class="d-background">
     <div class="app_container d-background">
         <div class="row">
             <div class="grid-1-2" id="main_content">
@@ -19,11 +19,11 @@
                     <a href="{{url('/question')}}" class="redo-test-btn">Doe de test opnieuw</a>
                 </div>
             </div>
-            <div class="grid-1-2 no-pad b-background" id="sub_content" style="overflow-y: hidden">
+            <div class="grid-1-2 no-pad b-background" id="sub_content" style="overflow-y: hidden; position: relative">
                 <div class="padding_bar d-background">
 
                 </div>
-                <div class="sub_content_content_box" style="overflow-y: scroll; height: 100%;">
+                <div class="sub_content_content_box" style="overflow-y: scroll; position: absolute; top: 0; bottom: 0; left: 0; right: -17px; ">
                     <div class="app_segment b-background main_content">
 
                         <p class=" basic">
