@@ -50,7 +50,7 @@ body *{
 }
 
 .no-pad{
-    padding: 0;
+    padding: 0!important;
 }
 
 .fixed_bottom_section{
@@ -388,4 +388,8 @@ span.accent_basic{
 #sub_content{
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+.center-text{
+    text-align: center!important;
 }

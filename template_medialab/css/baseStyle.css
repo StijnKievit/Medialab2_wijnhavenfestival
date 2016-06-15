@@ -15,7 +15,18 @@ body{
     margin: 0;
 
     /*in case content is not long enough*/
+
     background-color: #97daeb;
+
+}
+
+@media screen and (min-width: 785px) {
+
+    /*html{
+        width: 785px;
+        margin: 0 auto;
+    }*/
+
 }
 
 body *{
@@ -34,12 +45,12 @@ body *{
 
 .app_segment{
     width: 100%;
-    padding: 40px;
-    min-height: 200px;
+    padding: 20px 40px;
+    /*min-height: 200px;*/
 }
 
 .no-pad{
-    padding: 0;
+    padding: 0!important;
 }
 
 .fixed_bottom_section{
@@ -48,6 +59,12 @@ body *{
     left: 0;
     bottom: 0;
     min-height: 50px;
+}
+
+.fixed_bottom_section_buffer{
+    position: absolute;
+    width: 100%;
+    height: 70px;
 }
 
 .b-background{
@@ -79,7 +96,7 @@ h1{
 }
 
 h2{
-    font-size: 3em;
+    font-size: 1.2em;
 }
 
 h3{
@@ -90,20 +107,25 @@ p.white{
     color: #FFFFFF;
 }
 p.basic{
-    font-size: 2.6em;
+    font-size: 1.2em;
     text-align: left;
     color: #135181;
+    /*
     padding: 20px 80px;
+    */
     font-family: ClearSans-Medium;
 }
 
 p.basic_white{
-    font-size: 2.6em;
+    font-size: 1.2em;
     text-align: left;
-    color: #ffffff;
+    color: #FFFFFF;
+    /*
     padding: 20px 80px;
+    */
     font-family: ClearSans-Medium;
 }
+
 p.blue{
     color: #135181;
     text-align: right;
@@ -115,10 +137,10 @@ p.blue{
 }
 
 .main-btn{
-    margin: 20px auto;
+    margin: 0 auto;
     display: block;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
 }
 .main-btn:after{
     content: '';
@@ -139,7 +161,19 @@ p.blue{
 }
 
 .arrow{
-    margin-top: 5px;
+    margin-top: 15px;
+    display: block;
+    height: 20px;
+    width: auto;
+}
+
+.back{
+    padding: 20px 15px;
+    display: block;
+}
+
+.arrow-back{
+
     display: block;
     height: 30px;
     width: auto;
@@ -149,6 +183,9 @@ p.blue{
     color: #FFFFFF;
 }
 
+.d-blue{
+    color: #135181;
+}
 ul{
     list-style: none;
     padding: 0;
@@ -199,7 +236,7 @@ li{
 }
 
 .size-large{
-    font-size: 6em;
+    font-size: 2.7em;
 }
 
 .no-marg{
@@ -210,13 +247,20 @@ li{
     margin: 0 0 20px 0;
 }
 .arrow_down_container{
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
     width: 100%;
     padding: 20px 0;
 }
 
 .arrow-down{
-    margin: 0 auto 20px;
+    margin: 0 auto;
     display: block;
+    width: auto;
+    height: 20px;
 }
 
 span.accent_basic{
@@ -234,29 +278,118 @@ span.accent_basic{
 .horeca_img{
     display: block;
     width: 100%;
-    height: 325px;
+    height: 170px;
 
 }
 .horeca_button{
+    text-decoration: none;
     display: block;
     background-color: #a31627;
     color: #FFFFFF;
     width: 90%;
     position: absolute;
-    bottom: -80px;
+    bottom: -35px;
     right: 0;
-    text-align: center;
-    font-size: 3.8em;
-    padding: 50px 40px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    text-align: left;
+    font-size: 1.8em;
+    padding: 16px 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .horeca_arrow{
     position: absolute;
     right: 40px;
-    bottom: -20px;
+    bottom: -15px;
     display: block;
-    height: 60px;
+    height: 30px;
     width: auto;
+}
+
+@media screen and (max-width: 374px) {
+    .horeca_arrow{
+        display: none!important;
+    }
+}
+
+.google_maps{
+    width: 100%;
+    height: 240px;
+}
+
+@media screen and (min-width: 700px) {
+
+    .google_maps{
+        width: 100%;
+        height: 480px;
+    }
+}
+
+.size-medium{
+    font-size: 2em;
+}
+
+.zeebonk_img{
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.img-responsive{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*DESKTOP SECTION*/
+
+.row{
+    width: 100%;
+}
+
+.row:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+
+.grid-1-3{
+    width: 33.3333%;
+}
+.grid-2-3{
+    width: 66.6666%;
+}
+.grid-1{
+    width: 100%;
+}
+
+.grid-1-2{
+    width: 50%;
+}
+
+[class*='grid']{
+    padding-left: 20px;
+    float: left;
+}
+
+[class*='grid']:first-child{
+    padding-left: 0;
+}
+
+.span-normal{
+    text-transform: none;
+    text-align: left;
+    display: block;
+    padding: 5px;
+}
+
+#sub_content{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.center-text{
+    text-align: center!important;
 }
