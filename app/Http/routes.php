@@ -11,22 +11,32 @@
 |
 */
 //returns the index page
-Route::get('/', function () {
-    return view('welcome');
-});
+use Jenssegers\Agent\Agent;
 
-//returns the questions page
-Route::get('/horeca','ZeeController@getAllRestaurants');
-Route::get('/horeca/{id}','ZeeController@getRestaurants');
+$agent = new Agent();
 
-Route::get('/beverage', 'ZeeController@getAllBeverages');
-Route::get('/beverage/{id}', 'ZeeController@getBeverages');
+if ($agent->isDesktop()) {
+    Route::get('/', function () {
+        return view('desktop');
+    });
+} elseif ($agent->isMobile() || $agent->isTablet()) {
 
-Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
-Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
-Route::get('/result/{value}', 'zeeController@getZeebonkByValue');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('/horeca', 'ZeeController@getAllRestaurants');
+    Route::get('/horeca/{id}', 'ZeeController@getRestaurants');
+
+    Route::get('/beverage', 'ZeeController@getAllBeverages');
+    Route::get('/beverage/{id}', 'ZeeController@getBeverages');
+
+    Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
+    Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
+    Route::get('/result/{value}', 'zeeController@getZeebonkByValue');
 
 //Route::get('/question/{id}','zeeController@getQuestion');
-Route::get('/question','zeeController@getQuestion');
+    Route::get('/question', 'zeeController@getQuestion');
 
-Route::get('/map/{id}', 'ZeeController@mapInfo');
+    Route::get('/map/{id}', 'ZeeController@mapInfo');
+}

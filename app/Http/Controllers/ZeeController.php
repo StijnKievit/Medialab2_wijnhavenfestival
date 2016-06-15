@@ -20,6 +20,7 @@ class ZeeController extends Controller
     protected $zeebonk;
     protected $question;
     protected $questionArray;
+    protected $beverageArray;
 
     public function __construct(HorecaRepository $horeca, BeverageRepository $beverage, BevHorRepository $BevHor, ZeebonkRepository $zeebonk, QuestionsRepository $question)
     {
@@ -29,6 +30,7 @@ class ZeeController extends Controller
         $this->zeebonk = $zeebonk;
         $this->question = $question;
         $this->questionArray = array();
+        $this->beverageArray = array();
     }
 
     /**
@@ -123,10 +125,20 @@ class ZeeController extends Controller
         }
     }
     
+    protected function getFoodByHorId($id){
+        $BeveragesIds = $this->bevhor->beverageByHorecaId($id);
+
+        foreach ($BeveragesIds as $item){
+            array_push($this->beverageArray, $this->beverage->getBeverage($item['beverage_id']));
+        }
+        return json_encode($this->beverageArray);
+    }
+
     public function mapInfo($id){
         $temp = $this->horeca->getHoreca($id);
         return view('map.index', [
             'horeca' => $temp,
+            'gerechten' => $this->getFoodByHorId($id),
             'zeebonk' =>  $this->zeebonk->getZeebonkById($temp[0]['zeebonk'])
         ]);
     }
