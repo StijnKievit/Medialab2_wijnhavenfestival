@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2016 at 10:25 AM
+-- Generation Time: Jun 15, 2016 at 04:48 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -40,14 +40,30 @@ CREATE TABLE `answers` (
 --
 
 INSERT INTO `answers` (`id`, `question_id`, `answer`, `value`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Antwoord 1', 0, NULL, NULL),
-(2, 1, 'Antwoord 2', 1, NULL, NULL),
-(3, 1, 'Antwoord 3', 2, NULL, NULL),
-(4, 1, 'Antwoord 4', 3, NULL, NULL),
-(5, 2, 'Antwoord 5', 2, NULL, NULL),
-(6, 2, 'Antwoord 6', 1, NULL, NULL),
-(7, 2, 'Antwoord 7', 4, NULL, NULL),
-(8, 2, 'Antwoord 8', 2, NULL, NULL);
+(1, 1, 'Macht hebben over mijn eigen schip', 1, NULL, NULL),
+(2, 1, 'Schat zoeken en schepen kapen!', 2, NULL, NULL),
+(3, 1, 'Verre reizen maken en nieuwe culturen ontdekken', 3, NULL, NULL),
+(4, 1, 'De golven, vissen en het zoute water', 4, NULL, NULL),
+(5, 2, 'Luxe wijn', 1, NULL, NULL),
+(6, 2, 'Bier', 2, NULL, NULL),
+(7, 2, 'Een exotische vruchtendrank', 3, NULL, NULL),
+(8, 2, 'Witte, frisse wijn', 4, NULL, NULL),
+(9, 3, 'Projectleider / manager', 1, NULL, NULL),
+(10, 3, 'Hacker', 2, NULL, NULL),
+(11, 3, 'In- en verkoper', 3, NULL, NULL),
+(12, 3, 'Schipper', 4, NULL, NULL),
+(13, 4, 'Je laten verzorgen in je 5-sterren hotel', 1, NULL, NULL),
+(14, 4, 'De bar / kroeg opzoeken', 2, NULL, NULL),
+(15, 4, 'Naar de markt om exotische producten en lekkernijen te vinden', 3, NULL, NULL),
+(16, 4, 'Zeilen om verse vis te vangen voor op de bbq', 4, NULL, NULL),
+(17, 5, 'Zelfverzekerd zijn en hoge ambities hebben', 1, NULL, NULL),
+(18, 5, 'Vrijheid en genieten van het leven', 2, NULL, NULL),
+(19, 5, 'Nieuwe plekken en culturen ontdekken', 3, NULL, NULL),
+(20, 5, 'Hard werken en kwaliteit waarderen', 4, NULL, NULL),
+(21, 6, 'Je probeert een oplossing te vinden', 1, NULL, NULL),
+(22, 6, 'Je laat niet met je sollen en laat zien wie hier de sterkste is!', 2, NULL, NULL),
+(23, 6, 'Je probeert een deal te sluiten', 3, NULL, NULL),
+(24, 6, 'Je zet alvast de bbq aan om de sfeer op te vrolijken', 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,7 +124,7 @@ INSERT INTO `bev_hors` (`beverage_id`, `horeca_id`, `created_at`, `updated_at`) 
 CREATE TABLE `horecas` (
   `id` int(10) UNSIGNED NOT NULL,
   `naam` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `beschrijving` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `beschrijving` text COLLATE utf8_unicode_ci NOT NULL,
   `zeebonk` int(11) NOT NULL,
   `afbeelding` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `location_lang` double NOT NULL,
@@ -122,8 +138,13 @@ CREATE TABLE `horecas` (
 --
 
 INSERT INTO `horecas` (`id`, `naam`, `beschrijving`, `zeebonk`, `afbeelding`, `location_lang`, `location_long`, `created_at`, `updated_at`) VALUES
-(1, 'Test', 'This is a test location', 1, 'bla', 123, 123, NULL, NULL),
-(2, 'Test3234', 'This is a test location2', 1, 'bla2', 123, 123, NULL, NULL);
+(1, 'H20-tel', 'Het H20tel is een schip, omgetoverd tot 3-sterren-hotel. Tussen 1300 en 1700 kun je genieten van een heerlijke H20-cocktail en een rondvaart door de Wijnhaven. Van 1500 tot 2100 staat er een special tasting event op het programma: samen met de hotelchefs worden er verschillende kleine gerechtjes geserveerd voor de echte fijnproever. De kids kunnen worden geschminkt tot échte zeebonk op het drijvende terras!', 1, 'img/h20tel_1.jpg', 51.917263, 4.487115, NULL, NULL),
+(2, 'Hangar 85', 'Hangar 85 is een van de culinaire hotspots van Rotterdam! De zeebonken met een verfijnde smaak zijn hier aan het goede adres. Geniet van oesters, carpaccio, gamba’s, rundvlees en andere kleine culinaire hoogstandjes naast de Vier Leeuwenbrug aan het water. De keuken en de sommelier verzorgen voor jou de perfecte wijn-spijscombinatie!', 1, 'img/Hangar85_1.jpg', 51.917583, 4.486085, NULL, NULL),
+(3, 'Encore Bar/Grill', 'Voor de vleesliefhebbende zeebonk is de keuze snel gemaakt: bij Encore Bar & Grill staat de kadeBBQ aan! Binnen kunnen er naar beelden van hoe het er vroeger uitzag gekeken worden. De kinderen kunnen op levensgrote kleurplaten kleuren terwijl de ouders genieten van een Pink Cocktail.', 2, 'img/Encore_1.jpg', 51.917467, 4.485437, NULL, NULL),
+(4, 'IBIS', 'Gezellige zeebonken kunnen zich opmaken voor livemuziek en snacks bij het Ibis Hotel terecht. Van 1400 tot 1600 is er een cocktailworkshop bij te wonen. Welke zeebonk maakt het lekkerste brouwsel?', 2, 'img/IbisHotel_1.jpg', 51.917441, 4.488317, NULL, NULL),
+(5, 'Alan/Pim''s', 'Hét kiprestaurant van Rotterdam heeft voor het festival heerlijke en gratis kipkluifjes klaargemaakt. Ruwe zeebonken kunnen hier op het zomerse terras uitrusten en een biertje drinken. Er is zowel voor de grote als de kleine eter veel te smullen!', 3, 'img/AlanPims_1.jpg', 51.91758, 4.485134, NULL, NULL),
+(6, 'Selfies Place', 'Zeebonken houden van drinken. Zij komen het beste aan hun trekken bij Selfies Place! De gezellige bar heeft een groot scala aan dranken klaarstaan. Geniet van de vele speciaalbieren-en wijnen, waaronder de smaakvolle Boschendal. Kom jij proeven?', 4, 'img/SelfiesPlace_1.jpg', 51.91769, 4.484878, NULL, NULL),
+(7, 'Vessel 11', 'A boat with a BBQ', 4, 'img/Vessel11_1.jpg', 51.917177, 4.484648, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,8 +202,12 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`id`, `question`, `created_at`, `updated_at`) VALUES
-(1, 'Vraag 1', NULL, NULL),
-(2, 'Vraag 2', NULL, NULL);
+(1, 'Wat lijkt jou het mooist aan het leven op zee?', NULL, NULL),
+(2, 'Welk drankje drink jij het liefst?', NULL, NULL),
+(3, 'Welke baan past het best bij jou?', NULL, NULL),
+(4, 'Wat doe jij als je op een tropisch eiland bent?', NULL, NULL),
+(5, 'Wat is voor jou belangrijk?', NULL, NULL),
+(6, 'Wat doe jij als er ruzie ontstaat binnen de groep?', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -222,7 +247,8 @@ CREATE TABLE `users` (
 CREATE TABLE `zeebonks` (
   `id` int(10) UNSIGNED NOT NULL,
   `naam` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `beschrijving` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `beschrijving` text COLLATE utf8_unicode_ci NOT NULL,
+  `beschrijving_eten` text COLLATE utf8_unicode_ci NOT NULL,
   `afbeelding` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `max_value` int(11) NOT NULL,
   `min_value` int(11) NOT NULL,
@@ -235,9 +261,11 @@ CREATE TABLE `zeebonks` (
 -- Dumping data for table `zeebonks`
 --
 
-INSERT INTO `zeebonks` (`id`, `naam`, `beschrijving`, `afbeelding`, `max_value`, `min_value`, `type`, `created_at`, `updated_at`) VALUES
-(1, 'Handelaar', 'Dit is een test beschrijving', 'test1', 5, 1, 1, NULL, NULL),
-(2, 'Piraat', 'Dit is de tweede zeebonk', 'test2', 10, 6, 1, NULL, NULL);
+INSERT INTO `zeebonks` (`id`, `naam`, `beschrijving`, `beschrijving_eten`, `afbeelding`, `max_value`, `min_value`, `type`, `created_at`, `updated_at`) VALUES
+(1, 'Handelaar', 'Jij reist de hele wereld over op zoek naar interessante producten. Je komt vaak in aanraking met exotische plekken en mensen.', 'Door je verre reizen en het handelen heb je een voorkeur ontwikkeld voor bijzondere <span class="accent_basic"> kruiden en specerijen</span> met <span class="accent_basic"> exotische dranken </span> en <span class="accent_basic"> speciale bieren </span>!', 'img/Handelsman.png', 11, 6, 1, NULL, NULL),
+(2, 'Piraat', 'Varen over de onbekende zeeën zit in jouw bloed! Samen met je mede piraten geniet je van al het mooie dat het zeeleven te bieden heeft. Lekker schepen kapen, rum drinken en schatten plunderen!', 'Niks maakt een piraat blijer dan een lekker sappig stuk <span class="accent_basic">vlees</span> met <span class="accent_basic">bier</span> en <span class="accent_basic">rum</span>!', 'img/Piraat.png', 15, 12, 1, NULL, NULL),
+(3, 'Kapitein', 'Jij bent kapitein van je eigen schip! Je vertelt wat er moet gebeuren en hebt veel verantwoordelijkheid. Gelukkig kan je altijd ontstressen met alle luxe etenswaren en dranken die je tot je beschikking hebt!', 'Als kapitein eet jij graag <span class="accent_basic">tapas</span> met bijzondere <span class="accent_basic"> wijn </span> of een luxe <span class="accent_basic">cocktail</span>!', 'img/Kapitein.png', 19, 16, 1, NULL, NULL),
+(4, 'Visser', 'Jij bent een echte zeeman! Elke dag ben je op zee. Je geniet van het zoute water, de golven en de uitgestrekte oceanen. Er gaat voor jou niets boven een goede vangst!', 'Als visser waardeer jij de smaak van goede, verse <span class="accent_basic">vis</span> met een frisse  witte<span class="accent_basic"> wijn.</span> ', 'img/Visser2.png', 24, 20, 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -295,7 +323,7 @@ ALTER TABLE `zeebonks`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `beverages`
 --
@@ -305,12 +333,12 @@ ALTER TABLE `beverages`
 -- AUTO_INCREMENT for table `horecas`
 --
 ALTER TABLE `horecas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -320,7 +348,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `zeebonks`
 --
 ALTER TABLE `zeebonks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
