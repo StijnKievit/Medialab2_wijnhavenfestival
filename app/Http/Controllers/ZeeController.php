@@ -122,7 +122,10 @@ class ZeeController extends Controller
     public function getZeebonkByValue($value)
     {
         $values = $this->zeebonk->getZeebonkValues();
-
+        $temp = $this->zeebonk->maxValue();
+        if($value >$temp[0]['max_value'] ){
+            $value = $temp[0]['max_value'];
+        }
         foreach ($values as $item) {
             if ($value <= $item['max_value'] && $value >= $item['min_value']) {
                 return view($this->view . 'questions.result',

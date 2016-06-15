@@ -32,4 +32,7 @@ class ZeebonkRepository
     {
         return Zeebonk::select('id', 'max_value', 'min_value')->get();
     }
+    public function maxValue(){
+        return Zeebonk::whereRaw('max_value = (select max(`max_value`) from zeebonks)')->get();
+    }
 }
