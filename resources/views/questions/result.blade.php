@@ -7,7 +7,7 @@
             <div class="zeebonk_bluebar"></div>
             <div class="zeebonk_text_segment">
                 <h2 class="white no-marg">Je bent een echte...</h2>
-                <h1 class="white size-large no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
+                <h1 class="white size-medium no-marg">{!! $zeebonk[0]['naam'] !!}</h1>
                   {{--{!!$zeebonk!!}--}}
                   {{--{!! $horeca !!}--}}
             </div>

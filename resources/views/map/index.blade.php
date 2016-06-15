@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="r-background">
-    <div class="app_container r-background">
+    <body class="">
+    <div class="app_container">
         <div class=" r-background app_segment no-pad zeebonk_title_section">
             <div class="zeebonk_bluebar"></div>
             <div class="zeebonk_text_segment_red horeca-title">
@@ -13,10 +13,10 @@
                 {{--{!! $gerechten !!}--}}
             </div>
         </div>
-        <div class="app_segment no-pad">
+        <div class="app_segment no-pad r-background">
             <img class="img-responsive" src="{{URL::asset($horeca[0]['afbeelding'])}}" alt="horecaImage">
         </div>
-        <div class="app_segment">
+        <div class="app_segment r-background">
             <p class="white basic_white">
                 {!! $horeca[0]['beschrijving'] !!}
             </p>
@@ -62,8 +62,17 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHPGfeM6_nc8dCiJDrDIBlYW9jS1NY4s&callback=initMap"
                 async defer></script>
 
-    </div>
-    <div class="app_segment Food_items">
+
+
+        <div class="app_segment no-pad b-background">
+            <div class="app_segment">
+                <h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>
+            </div>
+            <div class="Food_items">
+
+            </div>
+        </div>
+
     </div>
     <div class="fixed_bottom_section_buffer">
 
@@ -82,6 +91,30 @@
             $('.Food_items').append(gerechtElement);
         });
         $('.beverages_container').first().addClass('first');
+    </script>
+
+    <script>
+        var fixed_bar = $('.fixed_bottom_section');
+        var light_section = $('.Food_items');
+
+        var blue = "#97daeb";
+        var red = "#a31627";
+
+        $(window).scroll(function (event) {
+            if(light_section.position().top <  ( $(window).height() + getTopScroll() ))
+            {
+                console.log('change in blue!');
+                fixed_bar.css("background-color", blue);
+            }
+            else {
+                fixed_bar.css("background-color", red);
+            }
+        });
+
+        function getTopScroll(){
+            return $(window).scrollTop();
+        }
+
     </script>
     </body>
 @endsection
