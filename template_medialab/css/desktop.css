@@ -1,0 +1,24 @@
+.desktop_container{
+    width: 100%;
+}
+
+.desktop_section{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.desktop_section.app_segment{
+    width: 420px;
+}
+
+.desktop_section:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+
+.question_zeebonk_background{
+    background: url("img/zeebonk_background_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
