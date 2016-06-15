@@ -341,3 +341,51 @@ span.accent_basic{
     height: auto;
     display: block;
 }
+
+/*DESKTOP SECTION*/
+
+.row{
+    width: 100%;
+}
+
+.row:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+
+.grid-1-3{
+    width: 33.3333%;
+}
+.grid-2-3{
+    width: 66.6666%;
+}
+.grid-1{
+    width: 100%;
+}
+
+.grid-1-2{
+    width: 50%;
+}
+
+[class*='grid']{
+    padding-left: 20px;
+    float: left;
+}
+
+[class*='grid']:first-child{
+    padding-left: 0;
+}
+
+.span-normal{
+    text-transform: none;
+    text-align: left;
+    display: block;
+    padding: 5px;
+}
+
+#sub_content{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
