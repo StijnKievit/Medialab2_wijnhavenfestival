@@ -57,7 +57,7 @@
 
             </div>
         </div>
-        <footer class="row d-background">
+       {{-- <footer class="row d-background">
             <div class="grid-1">
                <span class="no-marg no-pad span-normal">
                    Dit product is ontwikkeld in samenwerking met Wijnhaven festival 2016 &#174; & Hogeschool Rotterdam&#174;
@@ -68,7 +68,7 @@
 
 
             </div>
-        </footer>
+        </footer>--}}
 
     </div>
 
