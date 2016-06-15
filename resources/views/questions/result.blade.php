@@ -45,7 +45,7 @@
     </div>
     <a class="zeebonk_redo_test_bar" href="{{url('/question/')}}">
         <div class="share_text">
-            <p class="white no-marg">Doe de test opnieuw!</p>
+            <p class="white no-marg">Doe de test opnieuw</p>
         </div>
     </a>
     <div class="share_popup">
