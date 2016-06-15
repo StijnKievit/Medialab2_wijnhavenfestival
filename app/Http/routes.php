@@ -16,27 +16,24 @@ use Jenssegers\Agent\Agent;
 $agent = new Agent();
 
 if ($agent->isDesktop()) {
-    Route::get('/', function () {
-        return view('desktop');
-    });
+    Route::get('/', 'ZeeController@getDesktopIndex');
 } elseif ($agent->isMobile() || $agent->isTablet()) {
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('mobile.welcome');
     });
+}
+Route::get('/horeca', 'ZeeController@getAllRestaurants');
+Route::get('/horeca/{id}', 'ZeeController@getRestaurants');
 
-    Route::get('/horeca', 'ZeeController@getAllRestaurants');
-    Route::get('/horeca/{id}', 'ZeeController@getRestaurants');
+Route::get('/beverage', 'ZeeController@getAllBeverages');
+Route::get('/beverage/{id}', 'ZeeController@getBeverages');
 
-    Route::get('/beverage', 'ZeeController@getAllBeverages');
-    Route::get('/beverage/{id}', 'ZeeController@getBeverages');
-
-    Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
-    Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
-    Route::get('/result/{value}', 'zeeController@getZeebonkByValue');
+Route::get('/zeebonk', 'ZeeController@getAllZeebonkTypes');
+Route::get('/zeebonk/{id}', 'ZeeController@getZeebonkBeverages');
+Route::get('/result/{value}', 'zeeController@getZeebonkByValue');
 
 //Route::get('/question/{id}','zeeController@getQuestion');
-    Route::get('/question', 'zeeController@getQuestion');
+Route::get('/question', 'zeeController@getQuestion');
 
-    Route::get('/map/{id}', 'ZeeController@mapInfo');
-}
+Route::get('/map/{id}', 'ZeeController@mapInfo');

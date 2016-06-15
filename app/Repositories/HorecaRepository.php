@@ -26,7 +26,7 @@ class HorecaRepository
 //    }
     public function getAllHoreca()
     {
-        return Horeca::select('id', 'location_lang', 'location_long')->get();
+        return Horeca::get();
     }
 
     public function getHoreca($id)

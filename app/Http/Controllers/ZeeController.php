@@ -10,6 +10,7 @@ use App\Repositories\HorecaRepository;
 use App\Repositories\BevHorRepository;
 use App\Repositories\ZeebonkRepository;
 use App\Repositories\QuestionsRepository;
+use Jenssegers\Agent\Agent;
 
 class ZeeController extends Controller
 {
@@ -21,6 +22,8 @@ class ZeeController extends Controller
     protected $question;
     protected $questionArray;
     protected $beverageArray;
+    protected $agent;
+    protected $view;
 
     public function __construct(HorecaRepository $horeca, BeverageRepository $beverage, BevHorRepository $BevHor, ZeebonkRepository $zeebonk, QuestionsRepository $question)
     {
@@ -31,6 +34,12 @@ class ZeeController extends Controller
         $this->question = $question;
         $this->questionArray = array();
         $this->beverageArray = array();
+        $this->agent = new Agent();
+        if ($this->agent->isDesktop()) {
+            $this->view='desktop.';
+        } else {
+            $this->view = 'mobile.';
+        }
     }
 
     /**
@@ -104,7 +113,7 @@ class ZeeController extends Controller
 
     public function getQuestion()
     {
-        return view('questions.index', [
+        return view($this->view . 'questions.index', [
             'questions' => $this->getQuestions(),
         ]);
     }
@@ -115,7 +124,7 @@ class ZeeController extends Controller
 
         foreach ($values as $item) {
             if ($value <= $item['max_value'] && $value >= $item['min_value']) {
-                return view('questions.result',
+                return view($this->view . 'questions.result',
                     [
                         'zeebonk' => $this->zeebonk->getZeebonkById($item['id']),
                         'horeca' => $this->horeca->getHorecaByZeebonkId($item['id'])
@@ -124,22 +133,29 @@ class ZeeController extends Controller
             }
         }
     }
-    
-    protected function getFoodByHorId($id){
+
+    protected function getFoodByHorId($id)
+    {   
         $BeveragesIds = $this->bevhor->beverageByHorecaId($id);
 
-        foreach ($BeveragesIds as $item){
+        foreach ($BeveragesIds as $item) {
             array_push($this->beverageArray, $this->beverage->getBeverage($item['beverage_id']));
         }
         return json_encode($this->beverageArray);
     }
 
-    public function mapInfo($id){
+    public function mapInfo($id)
+    {
         $temp = $this->horeca->getHoreca($id);
-        return view('map.index', [
+        return view($this->view . 'map.index', [
             'horeca' => $temp,
             'gerechten' => $this->getFoodByHorId($id),
-            'zeebonk' =>  $this->zeebonk->getZeebonkById($temp[0]['zeebonk'])
+            'zeebonk' => $this->zeebonk->getZeebonkById($temp[0]['zeebonk'])
+        ]);
+    }
+    public function getDesktopIndex(){
+        return view('desktop.welcome',[
+            'horeca' => $this->horeca->getAllHoreca(),
         ]);
     }
 }
