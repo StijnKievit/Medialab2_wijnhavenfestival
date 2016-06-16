@@ -28,21 +28,21 @@
 
 @if(Request::url() === 'question/')
 
-<footer class="app_segment footer_segment">
-    <div class="row">
-        <div class="grid-1 no-pad">
-            <p class="white footer_title">- Vind de zeebonk in jezelf -</p>
-        </div>
-        <div class="grid-1-2 no-pad">
+    <footer class="app_segment footer_segment">
+        <div class="row">
+            <div class="grid-1 no-pad">
+                <p class="white footer_title">- Vind de zeebonk in jezelf -</p>
+            </div>
+            <div class="grid-1-2 no-pad">
                 <p class="white footer_head">In samenwerking met</p>
-            <p class="white footer_content">Hogeschool Rotterdam & Wijnhaven festival 2016</p>
+                <p class="white footer_content">Hogeschool Rotterdam & Wijnhaven festival 2016</p>
 
-        </div>
-        <div class="grid-1-2 no-pad footer_right">
+            </div>
+            <div class="grid-1-2 no-pad footer_right">
                 <p class="white footer_head">Ontwikkeld door</p>
-            <p class="white footer_content">Justin, Patrick, Sarella & Stijn</p>
+                <p class="white footer_content">Justin, Patrick, Sarella & Stijn</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 @endif
 </html>

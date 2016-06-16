@@ -8,9 +8,6 @@
             <div class="zeebonk_text_segment_red horeca-title">
 
                 <h1 class="white size-medium no-marg"> {!! $horeca[0]['naam'] !!}</h1>
-                {{--{!! $zeebonk !!}--}}
-                {{--{!! $horeca !!}--}}
-                {{--{!! $gerechten !!}--}}
             </div>
         </div>
         <div class="app_segment no-pad r-background">
@@ -55,24 +52,18 @@
 
 
                 });
-
-
             }
-
-            /*   $('.google_maps').height($('.google_maps').width());*/
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHPGfeM6_nc8dCiJDrDIBlYW9jS1NY4s&callback=initMap"
                 async defer></script>
 
-
-
         {{--<div class="app_segment no-pad b-background">--}}
-            {{--<div class="app_segment">--}}
-                {{--<h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>--}}
-            {{--</div>--}}
-            {{--<div class="Food_items">--}}
+        {{--<div class="app_segment">--}}
+        {{--<h2 class="title size-medium d-blue no-marg">Eten & Drinken</h2>--}}
+        {{--</div>--}}
+        {{--<div class="Food_items">--}}
 
-            {{--</div>--}}
+        {{--</div>--}}
         {{--</div>--}}
 
     </div>
@@ -87,12 +78,12 @@
 
     </div>
     {{--<script>--}}
-        {{--$.each({!! $gerechten !!}, function (i, val) {--}}
-            {{--console.log(val[0]);--}}
-            {{--var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';--}}
-            {{--$('.Food_items').append(gerechtElement);--}}
-        {{--});--}}
-        {{--$('.beverages_container').first().addClass('first');--}}
+    {{--$.each({!! $gerechten !!}, function (i, val) {--}}
+    {{--console.log(val[0]);--}}
+    {{--var gerechtElement = '<div class="beverages_container"> <h3 class="beverage_title">' + val[0]['naam'] + '</h3><p class="beverage_text">' + val[0]["beschrijving"] + '</p></div>';--}}
+    {{--$('.Food_items').append(gerechtElement);--}}
+    {{--});--}}
+    {{--$('.beverages_container').first().addClass('first');--}}
     {{--</script>--}}
 
     <script>
@@ -103,8 +94,7 @@
         var red = "#a31627";
 
         $(window).scroll(function (event) {
-            if(light_section.position().top <  ( $(window).height() + getTopScroll() ))
-            {
+            if (light_section.position().top < ( $(window).height() + getTopScroll() )) {
                 console.log('change in blue!');
                 fixed_bar.css("background-color", blue);
             }
@@ -113,7 +103,7 @@
             }
         });
 
-        function getTopScroll(){
+        function getTopScroll() {
             return $(window).scrollTop();
         }
 

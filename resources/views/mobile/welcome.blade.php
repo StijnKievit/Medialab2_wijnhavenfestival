@@ -11,7 +11,7 @@
             <span>Wijnhaven festival 2016</span>
             <p class="blue extra-space">
 
-                Ontdek de zeebonk in jezelf en geniet van de gerechten die bij jou passen.
+                Wat voor type zeebonk ben jij? Doe de test en vind uit welke gerechten het best bij jou passen!
             </p>
         </div>
         {{--<div class="color_devider_blue">

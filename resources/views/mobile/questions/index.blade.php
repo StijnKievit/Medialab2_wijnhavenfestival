@@ -2,6 +2,7 @@
 
 @section('content')
     <body class="b-background">
+
     <div class="app_container">
         <div class="app_segment d-background">
             <h1 class="question">Wat lijkt jou het mooiste aan het leven op zee?</h1>
@@ -15,7 +16,6 @@
             <li class="answer answer_2" data-value="2">De zonsondergang</li>
             <li class="answer answer_3" data-value="3">A pirate life for me!</li>
             <li class="answer answer_4" data-value="4">Naar mijn dobber staren</li>
-           {{-- <span class="next"><img class="arrow" src="css/img/Pijltje-04.png"></span>--}}
         </ul>
 
     </div>
@@ -25,7 +25,7 @@
         /*main variables*/
         var answer_list = $('.answer_list');
         var question = $('.question');
-       /* var next_button = answer_list.find('.next');*/
+        /* var next_button = answer_list.find('.next');*/
 
         var cur_value = 0;
         var cur_question = 0;
@@ -180,26 +180,26 @@
         }
 
 
-       /* /!*handels click action*!/
-        next_button.click(function (e) {
-            /!*check if item is selected*!/
-            var cur_active_question = answer_list.find('.answer.active');
-            console.log(cur_active_question.length == 0);
-            if (cur_active_question.length == 0) {
-                alert("U heeft niks ingevuld!");
-            }
-            else {
-                if ((cur_question + 1) == max_question) {
-                    finish();
-                }
-                else {
-                    next_question();
-                }
-            }
+        /* /!*handels click action*!/
+         next_button.click(function (e) {
+         /!*check if item is selected*!/
+         var cur_active_question = answer_list.find('.answer.active');
+         console.log(cur_active_question.length == 0);
+         if (cur_active_question.length == 0) {
+         alert("U heeft niks ingevuld!");
+         }
+         else {
+         if ((cur_question + 1) == max_question) {
+         finish();
+         }
+         else {
+         next_question();
+         }
+         }
 
-        });*/
+         });*/
 
-        function selectQuestion(){
+        function selectQuestion() {
             /*check if item is selected*/
             var cur_active_question = answer_list.find('.answer.active');
             console.log(cur_active_question.length == 0);
@@ -217,8 +217,8 @@
 
         }
 
-        function scrollToTop(){
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+        function scrollToTop() {
+            $("html, body").animate({scrollTop: 0}, "slow");
             return false;
         }
 
