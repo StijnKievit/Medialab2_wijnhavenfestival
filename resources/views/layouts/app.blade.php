@@ -26,6 +26,7 @@
 
 @yield('content')
 
+@if(Request::url() === 'question/')
 
 <footer class="app_segment footer_segment">
     <div class="row">
@@ -43,4 +44,5 @@
         </div>
     </div>
 </footer>
+@endif
 </html>
