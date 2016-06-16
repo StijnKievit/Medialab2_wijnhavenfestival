@@ -2,7 +2,6 @@
 
 @section('content')
     <body>
-    <script>$('.google_maps').css('height' ,$('#main_content').height());</script>
     <div class="app_container b-background">
         <div class="row">
             <div class="grid-1-2" id="main_content">
@@ -101,6 +100,11 @@
     </div>
 
     <script type="application/javascript">
+
+        $(document).ready(function(){
+            $("#map").height($("#main_content").height());
+        });
+
     </script>
 
     <script type="application/javascript">
