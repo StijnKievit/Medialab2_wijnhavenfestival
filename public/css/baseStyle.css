@@ -129,7 +129,7 @@ p.basic_white{
 p.blue{
     color: #135181;
     text-align: right;
-    padding-left: 20%;
+    padding-left: 10%;
     font-size: 1.2em;
     font-weight: bold;
     font-family: ClearSans-Medium, "ClearSans-Bold";
@@ -139,8 +139,8 @@ p.blue{
 .main-btn{
     margin: 0 auto;
     display: block;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
 }
 .main-btn:after{
     content: '';
@@ -161,7 +161,7 @@ p.blue{
 }
 
 .arrow{
-    margin-top: 15px;
+    margin-top: 20px;
     display: block;
     height: 20px;
     width: auto;
