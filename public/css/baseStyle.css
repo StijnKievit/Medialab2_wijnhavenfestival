@@ -326,7 +326,7 @@ span.accent_basic{
     width: auto;
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 359px) {
     .horeca_arrow{
         display: none!important;
     }
