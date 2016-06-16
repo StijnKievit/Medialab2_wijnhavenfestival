@@ -29,17 +29,17 @@
 
 <footer class="app_segment footer_segment">
     <div class="row">
-        <div class="grid-1">
-            <p class="white center-text size-medium">- Vind de zeebonk in jezelf -</p>
+        <div class="grid-1 no-pad">
+            <p class="white footer_title">- Vind de zeebonk in jezelf -</p>
         </div>
-        <div class="grid-1-2">
-                <p class="white">In samenwerking met</p>
-            <p class="white">Hogeschool Rotterdam & Wijnhaven festival 2016</p>
+        <div class="grid-1-2 no-pad">
+                <p class="white footer_head">In samenwerking met</p>
+            <p class="white footer_content">Hogeschool Rotterdam & Wijnhaven festival 2016</p>
 
         </div>
-        <div class="grid-1-2 footer_right">
-                <p class="white">Ontwikkeld door</p>
-            <p class="white">Justin, Patrick, Sarella & Stijn</p>
+        <div class="grid-1-2 no-pad footer_right">
+                <p class="white footer_head">Ontwikkeld door</p>
+            <p class="white footer_content">Justin, Patrick, Sarella & Stijn</p>
         </div>
     </div>
 </footer>
