@@ -9,7 +9,7 @@
         <div class="app_segment">
             <!--content-->
             <span>Wijnhaven festival 2016</span>
-            <p class="blue extra-space">
+            <p class="blue">
 
                 Wat voor type zeebonk ben jij? Doe de test en vind uit welke gerechten het best bij jou passen!
             </p>
