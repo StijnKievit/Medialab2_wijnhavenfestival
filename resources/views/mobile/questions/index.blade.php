@@ -158,47 +158,18 @@
         /*sets progressbar*/
         function adjustProgressBar() {
             console.log(cur_question);
-
             var progress_element = $('.progress_bar_value');
-
             var cur_question_value;
-
-            /*console.log("cur question =" + cur_question);
-             console.log("max questions = " + max_question);*/
-
             if (cur_question == 0) {
                 cur_question_value = 1;
             }
             else {
                 cur_question_value = cur_question + 1;
             }
-
             var progress = ( cur_question_value / max_question ) * 100;
-
             progress_element.width(progress + '%');
             console.log("cur progress = " + progress);
         }
-
-
-        /* /!*handels click action*!/
-         next_button.click(function (e) {
-         /!*check if item is selected*!/
-         var cur_active_question = answer_list.find('.answer.active');
-         console.log(cur_active_question.length == 0);
-         if (cur_active_question.length == 0) {
-         alert("U heeft niks ingevuld!");
-         }
-         else {
-         if ((cur_question + 1) == max_question) {
-         finish();
-         }
-         else {
-         next_question();
-         }
-         }
-
-         });*/
-
         function selectQuestion() {
             /*check if item is selected*/
             var cur_active_question = answer_list.find('.answer.active');
@@ -216,7 +187,6 @@
             }
 
         }
-
         function scrollToTop() {
             $("html, body").animate({scrollTop: 0}, "slow");
             return false;
